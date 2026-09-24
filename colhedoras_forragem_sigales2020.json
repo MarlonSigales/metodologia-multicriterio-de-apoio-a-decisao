@@ -1,0 +1,3729 @@
+{
+ "meta": {
+  "nome": "Colhedoras de forragem — agricultura familiar (Sigales, 2020)",
+  "rotulo": "Ranqueamento de colhedoras de forragem para a agricultura familiar",
+  "descricao": "Estudo de caso da disciplina Metodologia Multicritério para Apoio à Decisão (UFPel, nov/2020). Banco de dados de Silveira et al. (2021): 45 colhedoras. Critérios: cotação, produtividade, consumo de combustível, conforto de operação e versatilidade. Funções de valor por pontuação direta (Tabelas 1–5), pesos dos PVEs por swing weights (Tabelas 6–8) e pesos dos PVFs pela comparação 2 a 2 de soma constante (simulação de usuário: 26/30/30/0/14). Dados de desempenho alinhados por modelo a partir da aba “Máquinas” e da coluna de cotação da aba “cotação”.",
+  "facilitador": "Marlon Soares Sigales",
+  "data": "2020-11-30"
+ },
+ "atores": [
+  {
+   "id": "at1",
+   "nome": "Autores do estudo",
+   "tipo": "decisor",
+   "poder": 8,
+   "interesse": 7,
+   "valores": "Construíram a estrutura, descritores e funções de valor."
+  },
+  {
+   "id": "at2",
+   "nome": "Agricultores familiares (usuários do software)",
+   "tipo": "decisor",
+   "poder": 7,
+   "interesse": 10,
+   "valores": "Definem os pesos dos PVFs pelas perguntas 2 a 2; são também os agidos principais."
+  },
+  {
+   "id": "at3",
+   "nome": "Autores como facilitadores",
+   "tipo": "facilitador",
+   "poder": 3,
+   "interesse": 5,
+   "valores": "Conduzem as perguntas iniciais do software."
+  },
+  {
+   "id": "at4",
+   "nome": "Revendedoras de máquinas",
+   "tipo": "agido",
+   "poder": 2,
+   "interesse": 6,
+   "valores": "Competitividade ao disponibilizar informações técnicas."
+  },
+  {
+   "id": "at5",
+   "nome": "Vendedores de implementos",
+   "tipo": "agido",
+   "poder": 2,
+   "interesse": 5,
+   "valores": "Indicar a máquina adequada ao cliente."
+  },
+  {
+   "id": "at6",
+   "nome": "Vendedores de silagem",
+   "tipo": "agido",
+   "poder": 1,
+   "interesse": 4,
+   "valores": "Qualidade da silagem quando o produtor tem máquina adequada."
+  }
+ ],
+ "acoes": [
+  {
+   "id": "ideal",
+   "nome": "a — Ideal (nível Bom em tudo)",
+   "desc": "Ação fictícia de referência da planilha (nota 100).",
+   "real": false,
+   "global": true
+  },
+  {
+   "id": "antag",
+   "nome": "Z — Antagônica (nível Neutro em tudo)",
+   "desc": "Ação fictícia de referência da planilha (nota 0).",
+   "real": false,
+   "global": true
+  },
+  {
+   "id": "m01",
+   "nome": "CASALE CFC SUPER-1300",
+   "desc": "Cultura CAPIM; modo ÁREA TOTAL; 29 facas; 2 rotor(es); rolos —; 20 t/h; TDP —–—; — kg; quebra-grãos NÃO; picado —–— mm; faca —; afiação ACOPLADA; comando HIDRÁULICO; engate ARRASTO; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx., massa, rolos, picado mínimo, perfil da faca.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m02",
+   "nome": "CASALE CFC SUPER-1800",
+   "desc": "Cultura CAPIM; modo ÁREA TOTAL; 42 facas; 2 rotor(es); rolos —; 30 t/h; TDP —–—; — kg; quebra-grãos NÃO; picado —–— mm; faca —; afiação ACOPLADA; comando HIDRÁULICO; engate ARRASTO; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx., massa, rolos, picado mínimo, perfil da faca.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m03",
+   "nome": "CASALE CRC-AP-150",
+   "desc": "Cultura CAPIM; modo ÁREA TOTAL; 59 facas; 2 rotor(es); rolos —; 25 t/h; TDP 40–60; 1360 kg; quebra-grãos NÃO; picado —–— mm; faca —; afiação ACOPLADA; comando HIDRÁULICO; engate ARRASTO; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, rolos, picado mínimo, perfil da faca.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m04",
+   "nome": "CASALE CRC-AP-180",
+   "desc": "Cultura CAPIM; modo ÁREA TOTAL; 66 facas; 2 rotor(es); rolos —; 30 t/h; TDP 50–85; 1430 kg; quebra-grãos NÃO; picado —–— mm; faca —; afiação ACOPLADA; comando HIDRÁULICO; engate ARRASTO; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, rolos, picado mínimo, perfil da faca.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m05",
+   "nome": "CASALE SEGA PASTO",
+   "desc": "Cultura CAPIM; modo ÁREA TOTAL; 42 facas; 1 rotor(es); rolos —; — t/h; TDP 60–—; 1300 kg; quebra-grãos NÃO; picado —–— mm; faca —; afiação MANUAL; comando HIDRÁULICO; engate ARRASTO; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, produtividade, potência TDP máx., rolos, picado mínimo, perfil da faca.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m06",
+   "nome": "COMBINE COMBINE - 50 SUPER",
+   "desc": "Cultura MULTICULTURA; modo LINHA (1 linha(s)); 12 facas; 1 rotor(es); rolos 4; 30 t/h; TDP 50–90; — kg; quebra-grãos SIM; picado 2–36 mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 13916). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, massa.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m07",
+   "nome": "COMBINE COMBINE - 60 MASTER",
+   "desc": "Cultura MULTICULTURA; modo LINHA (1 linha(s)); 12 facas; 1 rotor(es); rolos 4; 30 t/h; TDP 50–90; — kg; quebra-grãos SIM; picado 2–36 mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: '17.500,00'). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, massa.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m08",
+   "nome": "CREMASCO CUSTOM 930 C-III",
+   "desc": "Cultura MULTICULTURA; modo LINHA (1 linha(s)); 12 facas; 1 rotor(es); rolos 4; 30 t/h; TDP 45–80; 625 kg; quebra-grãos SIM; picado 2–41 mm; faca C/Z; afiação ACOPLADA; comando MANUAL/HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 100000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m09",
+   "nome": "CREMASCO CUSTOM 950 C-III",
+   "desc": "Cultura MULTICULTURA; modo LINHA (1 linha(s)); 12 facas; 1 rotor(es); rolos 4; 30 t/h; TDP 45–80; 625 kg; quebra-grãos SIM; picado 2–41 mm; faca C/Z; afiação ACOPLADA; comando MANUAL/HIDRÁULICO; engate 3 PONTOS; cotação R$ 21000 (aba cotação: 3319).",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m10",
+   "nome": "JF JF 1600 AT S2 COLHEDORA DE FORRAGEM EM ÁREA TOTAL",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 15 facas; 1 rotor(es); rolos 4; 50 t/h; TDP 80–140; 2400 kg; quebra-grãos SIM; picado 2.5–43 mm; faca C; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ 149011 (aba cotação: 1540).",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m11",
+   "nome": "JF JF 1900 AT COLHEDORA",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 24 facas; 2 rotor(es); rolos 8; 50 t/h; TDP 100–140; 2116 kg; quebra-grãos SIM; picado 2–36 mm; faca C; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ 125164 (aba cotação: 1000000).",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m12",
+   "nome": "JF JF 192 AT COLHEDORA",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 15 facas; 1 rotor(es); rolos 4; 38 t/h; TDP 80–120; 1050 kg; quebra-grãos SIM; picado 2.5–43 mm; faca C; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ 66466 (aba cotação: 'NÃO ENCONTRADO').",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m13",
+   "nome": "JF JF 192 C15 COLHEDORA",
+   "desc": "Cultura MULTICULTURA; modo LINHA (1 linha(s)); 15 facas; 1 rotor(es); rolos 4; 30 t/h; TDP 80–120; 870 kg; quebra-grãos SIM; picado 2.5–43 mm; faca C; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ 51158 (aba cotação: 10590).",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m14",
+   "nome": "JF JF 2000 AT FRONTAL COLHEDORA",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 24 facas; 2 rotor(es); rolos 8; 50 t/h; TDP 100–140; 1850 kg; quebra-grãos SIM; picado 2–36 mm; faca C; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ 125164 (aba cotação: 1000000).",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m15",
+   "nome": "JF JF 3200 AT COLHEDORA",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 30 facas; 2 rotor(es); rolos 8; 90 t/h; TDP 200–240; 4121 kg; quebra-grãos SIM; picado 2.5–43 mm; faca C; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ 306160 (aba cotação: 1000000).",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m16",
+   "nome": "JF JF C120 AT S3 COLHEDORA (CARDAN)",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 12 facas; 1 rotor(es); rolos 4; 35 t/h; TDP 60–90; 800 kg; quebra-grãos SIM; picado 2–36 mm; faca C; afiação ACOPLADA; comando HIDRÁULICO E SEMI-HIDRÁULICO; engate 3 PONTOS; cotação R$ 47300 (aba cotação: 1578).",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m17",
+   "nome": "JF JF C120 AT S3 COLHEDORA (POLIA)",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 12 facas; 1 rotor(es); rolos 4; 35 t/h; TDP 60–90; 800 kg; quebra-grãos SIM; picado 2–36 mm; faca C; afiação ACOPLADA; comando HIDRÁULICO E SEMI-HIDRÁULICO; engate 3 PONTOS; cotação R$ 47300 (aba cotação: 1540).",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m18",
+   "nome": "JF JF C120 S2 (CAIXA COM GIRO LIVRE)",
+   "desc": "Cultura MULTICULTURA; modo LINHA (1 linha(s)); 12 facas; 1 rotor(es); rolos 4; 30 t/h; TDP 50–80; 615 kg; quebra-grãos SIM; picado 2–36 mm; faca C; afiação ACOPLADA; comando HIDRÁULICO E SEMI-HIDRÁULICO; engate 3 PONTOS; cotação R$ 32481 (aba cotação: 3500).",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m19",
+   "nome": "JF JF C120 S2 (POLIA)",
+   "desc": "Cultura MULTICULTURA; modo LINHA (1 linha(s)); 12 facas; 1 rotor(es); rolos 4; 28 t/h; TDP 50–80; 600 kg; quebra-grãos SIM; picado 2–36 mm; faca C; afiação ACOPLADA; comando HIDRÁULICO E SEMI-HIDRÁULICO; engate 3 PONTOS; cotação R$ 30648 (aba cotação: 3780).",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m20",
+   "nome": "JF JF C240 DOUBLE EVOLUTION S2",
+   "desc": "Cultura MULTICULTURA; modo LINHA (2 linha(s)); 24 facas; 2 rotor(es); rolos 8; 50 t/h; TDP 80–120; 1250 kg; quebra-grãos SIM; picado 2–36 mm; faca C; afiação ACOPLADA; comando ELÉTRICO/HIDRÁULICO; engate 3 PONTOS; cotação R$ 85511 (aba cotação: 1540).",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m21",
+   "nome": "JUMIL JM4200SH",
+   "desc": "Cultura MULTICULTURA; modo LINHA (1 linha(s)); 12 facas; 1 rotor(es); rolos 4; 30 t/h; TDP 50–80; 720 kg; quebra-grãos NÃO; picado 2–14 mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 2100). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m22",
+   "nome": "JUMIL JM4200SH COM CRACKER",
+   "desc": "Cultura MULTICULTURA; modo LINHA (1 linha(s)); 6 facas; 1 rotor(es); rolos 4; 30 t/h; TDP 85–110; 800 kg; quebra-grãos SIM; picado 2–14 mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 0). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m23",
+   "nome": "MENTA CAPIMENTA 1510 PR",
+   "desc": "Cultura CAPIM; modo ÁREA TOTAL; 29 facas; 2 rotor(es); rolos —; 50 t/h; TDP 75–—; 1390 kg; quebra-grãos NÃO; picado —–— mm; faca RETO; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx., rolos, picado mínimo.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m24",
+   "nome": "MENTA CAPIMENTA 2000 PR",
+   "desc": "Cultura CAPIM; modo ÁREA TOTAL; 35 facas; 2 rotor(es); rolos —; 65 t/h; TDP 95–—; 1600 kg; quebra-grãos NÃO; picado —–— mm; faca RETO; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 0). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx., rolos, picado mínimo.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m25",
+   "nome": "MENTA COLHIFLEX MFC-1",
+   "desc": "Cultura MULTICULTURA; modo LINHA (1 linha(s)); 14 facas; 1 rotor(es); rolos 6; 50 t/h; TDP 86–—; 1450 kg; quebra-grãos NÃO; picado 5–12 mm; faca RETO; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 2372.16). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx..",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m26",
+   "nome": "MENTA COLHIFLEX MFC-2",
+   "desc": "Cultura MULTICULTURA; modo LINHA (2 linha(s)); 14 facas; 1 rotor(es); rolos 8; 40 t/h; TDP 100–—; 1560 kg; quebra-grãos NÃO; picado 5–12 mm; faca RETO; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx..",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m27",
+   "nome": "MENTA MENTA ATM 1.1- AR",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 12 facas; 1 rotor(es); rolos 6; 35 t/h; TDP 75–—; 1040 kg; quebra-grãos NÃO; picado 4–22 mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate ARRASTO; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx..",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m28",
+   "nome": "MENTA MENTA ATM 1.3 AR",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 12 facas; 1 rotor(es); rolos 6; 35 t/h; TDP 85–—; 1250 kg; quebra-grãos NÃO; picado 4–36 mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate ARRASTO; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx..",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m29",
+   "nome": "MENTA MENTA ATM 1.3 AR CRACKER",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 12 facas; 1 rotor(es); rolos 6; 35 t/h; TDP 110–—; 1250 kg; quebra-grãos SIM; picado 4–36 mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate ARRASTO; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx..",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m30",
+   "nome": "MENTA MENTA ATM 2.6",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 24 facas; 2 rotor(es); rolos 6; — t/h; TDP —–—; — kg; quebra-grãos NÃO; picado —–— mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, produtividade, potência TDP máx., massa, picado mínimo.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m31",
+   "nome": "MENTA PREMIUM FLEX ATMF",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 12 facas; 1 rotor(es); rolos 6; 30 t/h; TDP 110–—; 970 kg; quebra-grãos SIM; picado 4–22 mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 0). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx..",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m32",
+   "nome": "MENTA PREMIUM FLEX FC-1",
+   "desc": "Cultura MULTICULTURA; modo LINHA (1 linha(s)); 12 facas; 1 rotor(es); rolos 4; 35 t/h; TDP 80–—; 760 kg; quebra-grãos SIM; picado 4–22 mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 0). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx..",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m33",
+   "nome": "MENTA PREMIUM FLEX  ATM 1.3",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 12 facas; 1 rotor(es); rolos 6; 35 t/h; TDP 85–—; 1050 kg; quebra-grãos NÃO; picado 4–36 mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx..",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m34",
+   "nome": "MENTA SUPREMA FS-1",
+   "desc": "Cultura MULTICULTURA; modo LINHA (1 linha(s)); 12 facas; 1 rotor(es); rolos 4; 30 t/h; TDP 50–—; 550 kg; quebra-grãos SIM; picado 4–22 mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx..",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m35",
+   "nome": "MENTA SUSSEX 4/6",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 24 facas; 2 rotor(es); rolos 12; 40 t/h; TDP 180–250; 2410 kg; quebra-grãos SIM; picado 4–18 mm; faca Z; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m36",
+   "nome": "NOGUEIRA FTN 1000",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 12 facas; 1 rotor(es); rolos 4; 35 t/h; TDP 60–90; — kg; quebra-grãos SIM; picado 2–36 mm; faca RETO; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 32481). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, massa.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m37",
+   "nome": "NOGUEIRA FTN 1000 SUPER",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 14 facas; 1 rotor(es); rolos 4; 38 t/h; TDP 80–120; — kg; quebra-grãos SIM; picado 2.5–18 mm; faca RETO; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, massa.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m38",
+   "nome": "NOGUEIRA FTN 1900",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 24 facas; 2 rotor(es); rolos 8; 50 t/h; TDP 100–140; — kg; quebra-grãos SIM; picado 2–36 mm; faca RETO; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, massa.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m39",
+   "nome": "NOGUEIRA FTN 2000 FRONTAL",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 24 facas; 2 rotor(es); rolos 8; 50 t/h; TDP 100–140; — kg; quebra-grãos SIM; picado 2–36 mm; faca RETO; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, massa.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m40",
+   "nome": "NOGUEIRA FTN 2500",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 14 facas; 1 rotor(es); rolos 8; 60 t/h; TDP 140–180; — kg; quebra-grãos SIM; picado 2.5–18 mm; faca RETO; afiação ACOPLADA; comando HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, massa.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m41",
+   "nome": "NOGUEIRA NEW CAT 1200",
+   "desc": "Cultura MULTICULTURA; modo ÁREA TOTAL; 12 facas; 1 rotor(es); rolos 4; 50 t/h; TDP 100–—; — kg; quebra-grãos SIM; picado 2–24 mm; faca RETO; afiação ACOPLADA; comando ELÉTRICO/HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 1000000). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx., massa.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m42",
+   "nome": "PINHEIRO MAX-10",
+   "desc": "Cultura MULTICULTURA; modo LINHA/ÁREA TOTAL (1 linha(s)); 10 facas; 1 rotor(es); rolos 4; 30 t/h; TDP 50–—; 569 kg; quebra-grãos SIM; picado 2.5–14 mm; faca RETO; afiação ACOPLADA; comando MECÂNICO/HIDRÁULICO; engate 3 PONTOS; cotação R$ 24900 (aba cotação: 12210.87). SEM DADO (tratado como pior nível do descritor, regra da planilha): potência TDP máx..",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m43",
+   "nome": "PINHEIRO MAX-4",
+   "desc": "Cultura MULTICULTURA; modo LINHA/ÁREA TOTAL (1 linha(s)); 4 facas; 1 rotor(es); rolos 4; 20 t/h; TDP 35–—; 438 kg; quebra-grãos SIM; picado 7–12 mm; faca RETO; afiação ACOPLADA; comando MECÂNICO/HIDRÁULICO; engate 3 PONTOS; cotação R$ 21500 (aba cotação: 14205.57). SEM DADO (tratado como pior nível do descritor, regra da planilha): potência TDP máx..",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m44",
+   "nome": "PINHEIRO MAX-5",
+   "desc": "Cultura MULTICULTURA; modo LINHA/ÁREA TOTAL (1 linha(s)); 5 facas; 1 rotor(es); rolos 4; 25 t/h; TDP 45–—; 516 kg; quebra-grãos SIM; picado 5–10 mm; faca RETO; afiação ACOPLADA; comando MECÂNICO/HIDRÁULICO; engate 3 PONTOS; cotação R$ 22500 (aba cotação: 12210.87). SEM DADO (tratado como pior nível do descritor, regra da planilha): potência TDP máx..",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "m45",
+   "nome": "PINHEIRO MAX-GOLD PREMIER",
+   "desc": "Cultura MULTICULTURA; modo LINHA/ÁREA TOTAL (2 linha(s)); 12 facas; 1 rotor(es); rolos 4; 30 t/h; TDP 50–—; 600 kg; quebra-grãos SIM; picado 2–42 mm; faca RETO; afiação ACOPLADA; comando MECÂNICO/HIDRÁULICO; engate 3 PONTOS; cotação R$ — (aba cotação: 24798.24). SEM DADO (tratado como pior nível do descritor, regra da planilha): cotação, potência TDP máx..",
+   "real": true,
+   "global": true
+  }
+ ],
+ "conjA": {
+  "interna": "fixo",
+  "externa": "permanente",
+  "notas": "Conjunto de 45 colhedoras do banco de dados de Silveira et al. (2021); novas máquinas podem ser incluídas pelas revendedoras."
+ },
+ "problematica": {
+  "tipo": "gamma",
+  "notas": "Problemática da ordenação (Ensslin, 2001): ranquear as colhedoras para o perfil de preferências do usuário.",
+  "categorias": [],
+  "rejeicao": [],
+  "usarRejeicao": false
+ },
+ "epas": [
+  {
+   "id": "ep0",
+   "texto": "cotação (preço de mercado)",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep1",
+   "texto": "produtividade (t/h)",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep2",
+   "texto": "consumo de combustível",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep3",
+   "texto": "conforto de operação",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep4",
+   "texto": "versatilidade",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  }
+ ],
+ "mapa": {
+  "conceitos": [],
+  "ligacoes": [],
+  "clusters": [],
+  "ramos": [],
+  "autorFiltro": "",
+  "clusterFiltro": "",
+  "linhaCluster": ""
+ },
+ "arvore": {
+  "nos": [
+   {
+    "id": "root",
+    "pai": null,
+    "nome": "Ranqueamento de colhedoras de forragem para a agricultura familiar",
+    "tipo": "raiz",
+    "w": 1,
+    "def": "Ordenar (P.γ) as colhedoras de forragem do banco de dados de Silveira et al. (2021) segundo os valores do agricultor familiar."
+   },
+   {
+    "id": "pvf1",
+    "pai": "root",
+    "nome": "PVF1 Cotação",
+    "tipo": "PVF",
+    "w": 0.26,
+    "def": "Preço de mercado do implemento (mercado nacional).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quanti",
+     "classe": "direto",
+     "cont": "continuo",
+     "unid": "R$ (coluna COTAÇÃO da aba Máquinas)",
+     "niveis": [
+      {
+       "id": "pvf1_0",
+       "rot": "X ≥ 30 mil",
+       "desc": "",
+       "x": 30000
+      },
+      {
+       "id": "pvf1_1",
+       "rot": "25,5 mil (Neutro)",
+       "desc": "",
+       "x": 25500
+      },
+      {
+       "id": "pvf1_2",
+       "rot": "21 mil",
+       "desc": "",
+       "x": 21000
+      },
+      {
+       "id": "pvf1_3",
+       "rot": "16,5 mil (Bom)",
+       "desc": "",
+       "x": 16500
+      },
+      {
+       "id": "pvf1_4",
+       "rot": "X ≤ 12 mil",
+       "desc": "",
+       "x": 12000
+      }
+     ],
+     "bom": "pvf1_3",
+     "neutro": "pvf1_1",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabela 1 do estudo (a=1,67; b=−33,33). Desempenho: preço em R$ da aba Máquinas (15 das 45 máquinas têm preço). O texto fala em US$ 5.316,46–77.508,86, que correspondem a R$ 22.500 (MAX-5) e R$ 306.160 (JF 3200) convertidos; a unidade dos limiares 12k–30k não é explícita no estudo — revise se forem US$. A coluna da aba cotação não foi usada: está desalinhada (ex.: FTN 1000 recebe o preço da JF C120 S2) e contém marcadores 0/1.000.000."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pvf1_0": 0,
+      "pvf1_1": 20,
+      "pvf1_2": 50,
+      "pvf1_3": 80,
+      "pvf1_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pvf2",
+    "pai": "root",
+    "nome": "PVF2 Produtividade",
+    "tipo": "PVF",
+    "w": 0.3,
+    "def": "Quanto material o implemento processa por unidade de tempo (t/h).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quanti",
+     "classe": "direto",
+     "cont": "continuo",
+     "unid": "t/h",
+     "niveis": [
+      {
+       "id": "pvf2_0",
+       "rot": "X ≤ 23",
+       "desc": "",
+       "x": 23
+      },
+      {
+       "id": "pvf2_1",
+       "rot": "25,5 (Neutro)",
+       "desc": "",
+       "x": 25.5
+      },
+      {
+       "id": "pvf2_2",
+       "rot": "28",
+       "desc": "",
+       "x": 28
+      },
+      {
+       "id": "pvf2_3",
+       "rot": "30,5 (Bom)",
+       "desc": "",
+       "x": 30.5
+      },
+      {
+       "id": "pvf2_4",
+       "rot": "X ≥ 33",
+       "desc": "",
+       "x": 33
+      }
+     ],
+     "bom": "pvf2_3",
+     "neutro": "pvf2_1",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabela 2 (o texto grafa “k” e “t/ha”; a planilha usa 23–33 t/h). a=1,33; b=−20."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pvf2_0": 0,
+      "pvf2_1": 15,
+      "pvf2_2": 50,
+      "pvf2_3": 90,
+      "pvf2_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pvf3",
+    "pai": "root",
+    "nome": "PVF3 Consumo de combustível",
+    "tipo": "PVF",
+    "w": 0.3,
+    "def": "Quanto o implemento acrescenta ao consumo do trator (massa e potência exigida na TDP).",
+    "essencial": true,
+    "controlavel": true
+   },
+   {
+    "id": "pvf4",
+    "pai": "root",
+    "nome": "PVF4 Conforto de operação",
+    "tipo": "PVF",
+    "w": 0,
+    "def": "Aspectos ergonômicos e de operação: afiação, comando/acoplamento, engate.",
+    "essencial": true,
+    "controlavel": true
+   },
+   {
+    "id": "pvf5",
+    "pai": "root",
+    "nome": "PVF5 Versatilidade",
+    "tipo": "PVF",
+    "w": 0.14,
+    "def": "Diferenças construtivas que ampliam o uso da máquina.",
+    "essencial": true,
+    "controlavel": true
+   },
+   {
+    "id": "pve32",
+    "pai": "pvf3",
+    "nome": "PVE3.2 Potência exigida na TDP",
+    "tipo": "PVE",
+    "w": 0.5556,
+    "def": "Dado: coluna POTÊNCIA TDP MÁX do banco (como na planilha).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quanti",
+     "classe": "direto",
+     "cont": "continuo",
+     "unid": "kW",
+     "niveis": [
+      {
+       "id": "pve32_0",
+       "rot": "X ≥ 147,2",
+       "desc": "",
+       "x": 147.2
+      },
+      {
+       "id": "pve32_1",
+       "rot": "127,9 (Neutro)",
+       "desc": "",
+       "x": 127.9
+      },
+      {
+       "id": "pve32_2",
+       "rot": "108,6",
+       "desc": "",
+       "x": 108.6
+      },
+      {
+       "id": "pve32_3",
+       "rot": "89,3 (Bom)",
+       "desc": "",
+       "x": 89.3
+      },
+      {
+       "id": "pve32_4",
+       "rot": "X ≤ 70",
+       "desc": "",
+       "x": 70
+      }
+     ],
+     "bom": "pve32_3",
+     "neutro": "pve32_1",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabela 3 (potência). a=1,25; b=−12,5."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve32_0": 0,
+      "pve32_1": 10,
+      "pve32_2": 55,
+      "pve32_3": 90,
+      "pve32_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pve31",
+    "pai": "pvf3",
+    "nome": "PVE3.1 Massa do implemento",
+    "tipo": "PVE",
+    "w": 0.4444,
+    "def": "Dado: coluna PESO (kg).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quanti",
+     "classe": "direto",
+     "cont": "continuo",
+     "unid": "kg",
+     "niveis": [
+      {
+       "id": "pve31_0",
+       "rot": "X ≥ 2000",
+       "desc": "",
+       "x": 2000
+      },
+      {
+       "id": "pve31_1",
+       "rot": "1700 (Neutro)",
+       "desc": "",
+       "x": 1700
+      },
+      {
+       "id": "pve31_2",
+       "rot": "1400",
+       "desc": "",
+       "x": 1400
+      },
+      {
+       "id": "pve31_3",
+       "rot": "1100 (Bom)",
+       "desc": "",
+       "x": 1100
+      },
+      {
+       "id": "pve31_4",
+       "rot": "X ≤ 800",
+       "desc": "",
+       "x": 800
+      }
+     ],
+     "bom": "pve31_3",
+     "neutro": "pve31_1",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabela 3 (massa). a=1,66; b=−16,66."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve31_0": 0,
+      "pve31_1": 10,
+      "pve31_2": 50,
+      "pve31_3": 70,
+      "pve31_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pve41",
+    "pai": "pvf4",
+    "nome": "PVE4.1 Afiação das facas",
+    "tipo": "PVE",
+    "w": 0.24,
+    "def": "Dado: coluna AFIAÇÃO.",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "direto",
+     "cont": "discreto",
+     "unid": "",
+     "niveis": [
+      {
+       "id": "pve41_0",
+       "rot": "Manual",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "pve41_1",
+       "rot": "Acoplada",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "pve41_1",
+     "neutro": "pve41_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": ""
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve41_0": 0,
+      "pve41_1": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pve42",
+    "pai": "pvf4",
+    "nome": "PVE4.2 Modo de acoplamento (comando)",
+    "tipo": "PVE",
+    "w": 0.36,
+    "def": "Níveis Hidráulico/Mecânico. Dado: coluna COMANDO — só “HIDRÁULICO” puro conta como hidráulico (regra da planilha).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "direto",
+     "cont": "discreto",
+     "unid": "",
+     "niveis": [
+      {
+       "id": "pve42_0",
+       "rot": "Mecânico",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "pve42_1",
+       "rot": "Hidráulico",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "pve42_1",
+     "neutro": "pve42_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": ""
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve42_0": 0,
+      "pve42_1": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pve43",
+    "pai": "pvf4",
+    "nome": "PVE4.3 Tipo de transmissão e comando (engate)",
+    "tipo": "PVE",
+    "w": 0.4,
+    "def": "Níveis Engate de 3 pontos/Arraste. Dado: coluna ACOPLAMENTO.",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "direto",
+     "cont": "discreto",
+     "unid": "",
+     "niveis": [
+      {
+       "id": "pve43_0",
+       "rot": "Arraste",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "pve43_1",
+       "rot": "Engate de 3 pontos",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "pve43_1",
+     "neutro": "pve43_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": ""
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve43_0": 0,
+      "pve43_1": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pve52",
+    "pai": "pvf5",
+    "nome": "PVE5.2 Nº de rolos recolhedores",
+    "tipo": "PVE",
+    "w": 0.1364,
+    "def": "",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quanti",
+     "classe": "direto",
+     "cont": "continuo",
+     "unid": "rolos",
+     "niveis": [
+      {
+       "id": "pve52_0",
+       "rot": "< 4",
+       "desc": "",
+       "x": 4
+      },
+      {
+       "id": "pve52_1",
+       "rot": "4,5 (Neutro)",
+       "desc": "",
+       "x": 4.5
+      },
+      {
+       "id": "pve52_2",
+       "rot": "5",
+       "desc": "",
+       "x": 5
+      },
+      {
+       "id": "pve52_3",
+       "rot": "5,5 (Bom)",
+       "desc": "",
+       "x": 5.5
+      },
+      {
+       "id": "pve52_4",
+       "rot": "> 6",
+       "desc": "",
+       "x": 6
+      }
+     ],
+     "bom": "pve52_3",
+     "neutro": "pve52_1",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabela 5. a=1,66; b=−33,33."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve52_0": 0,
+      "pve52_1": 20,
+      "pve52_2": 50,
+      "pve52_3": 80,
+      "pve52_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pve53",
+    "pai": "pvf5",
+    "nome": "PVE5.3 Nº de facas",
+    "tipo": "PVE",
+    "w": 0.1061,
+    "def": "",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quanti",
+     "classe": "direto",
+     "cont": "continuo",
+     "unid": "facas",
+     "niveis": [
+      {
+       "id": "pve53_0",
+       "rot": "X ≤ 15",
+       "desc": "",
+       "x": 15
+      },
+      {
+       "id": "pve53_1",
+       "rot": "18,75 (Neutro)",
+       "desc": "",
+       "x": 18.75
+      },
+      {
+       "id": "pve53_2",
+       "rot": "22,5",
+       "desc": "",
+       "x": 22.5
+      },
+      {
+       "id": "pve53_3",
+       "rot": "26,25 (Bom)",
+       "desc": "",
+       "x": 26.25
+      },
+      {
+       "id": "pve53_4",
+       "rot": "X ≥ 30",
+       "desc": "",
+       "x": 30
+      }
+     ],
+     "bom": "pve53_3",
+     "neutro": "pve53_1",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabela 5 (mais facas = melhor). O parágrafo “Os Descritores” diz o contrário (bom ~15; neutro ~30); prevaleceu a tabela, que é a usada na planilha."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve53_0": 0,
+      "pve53_1": 20,
+      "pve53_2": 50,
+      "pve53_3": 70,
+      "pve53_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pve54",
+    "pai": "pvf5",
+    "nome": "PVE5.4 Nº de rotores",
+    "tipo": "PVE",
+    "w": 0.0909,
+    "def": "",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quanti",
+     "classe": "direto",
+     "cont": "discreto",
+     "unid": "rotores",
+     "niveis": [
+      {
+       "id": "pve54_0",
+       "rot": "1 rotor",
+       "desc": "",
+       "x": 1
+      },
+      {
+       "id": "pve54_1",
+       "rot": "2 rotores",
+       "desc": "",
+       "x": 2
+      }
+     ],
+     "bom": "pve54_1",
+     "neutro": "pve54_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": ""
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve54_0": 0,
+      "pve54_1": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pve55",
+    "pai": "pvf5",
+    "nome": "PVE5.5 Tamanho das partículas",
+    "tipo": "PVE",
+    "w": 0.1515,
+    "def": "",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quanti",
+     "classe": "direto",
+     "cont": "continuo",
+     "unid": "mm (picado mínimo)",
+     "niveis": [
+      {
+       "id": "pve55_0",
+       "rot": "x ≥ 25",
+       "desc": "",
+       "x": 25
+      },
+      {
+       "id": "pve55_1",
+       "rot": "20 (Neutro)",
+       "desc": "",
+       "x": 20
+      },
+      {
+       "id": "pve55_2",
+       "rot": "15",
+       "desc": "",
+       "x": 15
+      },
+      {
+       "id": "pve55_3",
+       "rot": "10 (Bom)",
+       "desc": "",
+       "x": 10
+      },
+      {
+       "id": "pve55_4",
+       "rot": "x ≤ 5",
+       "desc": "",
+       "x": 5
+      }
+     ],
+     "bom": "pve55_3",
+     "neutro": "pve55_1",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabela 5 do estudo. Atenção: a planilha usou outra escala (2; 3,25; 4,5; 5,75; 7 mm), compatível com os dados (2 a 7 mm). Com a escala da tabela quase todas as máquinas ficam em N5."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve55_0": 0,
+      "pve55_1": 20,
+      "pve55_2": 80,
+      "pve55_3": 90,
+      "pve55_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pve56",
+    "pai": "pvf5",
+    "nome": "PVE5.6 Culturas trabalhadas",
+    "tipo": "PVE",
+    "w": 0.1364,
+    "def": "",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "direto",
+     "cont": "discreto",
+     "unid": "",
+     "niveis": [
+      {
+       "id": "pve56_0",
+       "rot": "Pastagens (capim)",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "pve56_1",
+       "rot": "Multicultural",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "pve56_1",
+     "neutro": "pve56_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": ""
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve56_0": 0,
+      "pve56_1": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pve57",
+    "pai": "pvf5",
+    "nome": "PVE5.7 Presença de quebra-grãos",
+    "tipo": "PVE",
+    "w": 0.1515,
+    "def": "",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "direto",
+     "cont": "discreto",
+     "unid": "",
+     "niveis": [
+      {
+       "id": "pve57_0",
+       "rot": "Não",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "pve57_1",
+       "rot": "Sim",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "pve57_1",
+     "neutro": "pve57_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "A tabela não marca Neutro; adotado “Não”."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve57_0": 0,
+      "pve57_1": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pve58",
+    "pai": "pvf5",
+    "nome": "PVE5.8 Perfil das facas",
+    "tipo": "PVE",
+    "w": 0.0758,
+    "def": "",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "direto",
+     "cont": "discreto",
+     "unid": "",
+     "niveis": [
+      {
+       "id": "pve58_0",
+       "rot": "Reta",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "pve58_1",
+       "rot": "C",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "pve58_2",
+       "rot": "Z (ou C/Z)",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "pve58_2",
+     "neutro": "pve58_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": ""
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve58_0": 0,
+      "pve58_1": 80,
+      "pve58_2": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "pve59",
+    "pai": "pvf5",
+    "nome": "PVE5.9 Modo de colheita",
+    "tipo": "PVE",
+    "w": 0.1515,
+    "def": "",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "direto",
+     "cont": "discreto",
+     "unid": "",
+     "niveis": [
+      {
+       "id": "pve59_0",
+       "rot": "1 linha",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "pve59_1",
+       "rot": "2 linhas",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "pve59_2",
+       "rot": "Área total",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "pve59_3",
+       "rot": "Área/1 linha",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "pve59_4",
+       "rot": "Área/2 linhas",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "pve59_2",
+     "neutro": "pve59_1",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": ""
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "pve59_0": 0,
+      "pve59_1": 50,
+      "pve59_2": 80,
+      "pve59_3": 90,
+      "pve59_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   }
+  ],
+  "familia": {}
+ },
+ "indep": {},
+ "pesos": {
+  "root": {
+   "metodo": "soma",
+   "somaModo": "linhas",
+   "ord": {},
+   "swing": {},
+   "trade": {
+    "ref": "",
+    "v": {}
+   },
+   "mac": {},
+   "soma": {
+    "pvf1_pvf2": 50,
+    "pvf1_pvf3": 50,
+    "pvf1_pvf4": 100,
+    "pvf1_pvf5": 60,
+    "pvf2_pvf3": 50,
+    "pvf2_pvf4": 100,
+    "pvf2_pvf5": 100,
+    "pvf3_pvf4": 100,
+    "pvf3_pvf5": 100,
+    "pvf4_pvf5": 0
+   },
+   "res": {
+    "soma_linhas": {
+     "pvf1": 0.26,
+     "pvf2": 0.3,
+     "pvf3": 0.3,
+     "pvf4": 0,
+     "pvf5": 0.13999999999999999
+    }
+   }
+  },
+  "pvf3": {
+   "metodo": "swing",
+   "ord": {},
+   "swing": {
+    "pve32": 100,
+    "pve31": 80
+   },
+   "trade": {
+    "ref": "",
+    "v": {}
+   },
+   "mac": {},
+   "soma": {},
+   "somaModo": "linhas",
+   "res": {
+    "swing": {
+     "pve32": 0.5555555555555556,
+     "pve31": 0.4444444444444444
+    }
+   }
+  },
+  "pvf4": {
+   "metodo": "swing",
+   "ord": {},
+   "swing": {
+    "pve41": 60,
+    "pve42": 90,
+    "pve43": 100
+   },
+   "trade": {
+    "ref": "",
+    "v": {}
+   },
+   "mac": {},
+   "soma": {},
+   "somaModo": "linhas",
+   "res": {
+    "swing": {
+     "pve41": 0.24,
+     "pve42": 0.36,
+     "pve43": 0.4
+    }
+   }
+  },
+  "pvf5": {
+   "metodo": "swing",
+   "ord": {},
+   "swing": {
+    "pve52": 90,
+    "pve53": 70,
+    "pve54": 60,
+    "pve55": 100,
+    "pve56": 90,
+    "pve57": 100,
+    "pve58": 50,
+    "pve59": 100
+   },
+   "trade": {
+    "ref": "",
+    "v": {}
+   },
+   "mac": {},
+   "soma": {},
+   "somaModo": "linhas",
+   "res": {
+    "swing": {
+     "pve52": 0.13636363636363635,
+     "pve53": 0.10606060606060606,
+     "pve54": 0.09090909090909091,
+     "pve55": 0.15151515151515152,
+     "pve56": 0.13636363636363635,
+     "pve57": 0.15151515151515152,
+     "pve58": 0.07575757575757576,
+     "pve59": 0.15151515151515152
+    }
+   }
+  }
+ },
+ "desempenho": {
+  "m01": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 20
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 2000
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 25
+   },
+   "pve53": {
+    "x": 29
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_0"
+   },
+   "pve56": {
+    "lv": "pve56_0"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m02": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 2000
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 25
+   },
+   "pve53": {
+    "x": 42
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_0"
+   },
+   "pve56": {
+    "lv": "pve56_0"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m03": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 25
+   },
+   "pve32": {
+    "x": 60
+   },
+   "pve31": {
+    "x": 1360
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 25
+   },
+   "pve53": {
+    "x": 59
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_0"
+   },
+   "pve56": {
+    "lv": "pve56_0"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m04": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 85
+   },
+   "pve31": {
+    "x": 1430
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 25
+   },
+   "pve53": {
+    "x": 66
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_0"
+   },
+   "pve56": {
+    "lv": "pve56_0"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m05": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 23
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 1300
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 25
+   },
+   "pve53": {
+    "x": 42
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_0"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_0"
+   },
+   "pve56": {
+    "lv": "pve56_0"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m06": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 90
+   },
+   "pve31": {
+    "x": 2000
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_0"
+   }
+  },
+  "m07": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 90
+   },
+   "pve31": {
+    "x": 2000
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_0"
+   }
+  },
+  "m08": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 80
+   },
+   "pve31": {
+    "x": 625
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_0"
+   }
+  },
+  "m09": {
+   "pvf1": {
+    "x": 21000
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 80
+   },
+   "pve31": {
+    "x": 625
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_0"
+   }
+  },
+  "m10": {
+   "pvf1": {
+    "x": 149011
+   },
+   "pvf2": {
+    "x": 50
+   },
+   "pve32": {
+    "x": 140
+   },
+   "pve31": {
+    "x": 2400
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2.5
+   },
+   "pve53": {
+    "x": 15
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_1"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m11": {
+   "pvf1": {
+    "x": 125164
+   },
+   "pvf2": {
+    "x": 50
+   },
+   "pve32": {
+    "x": 140
+   },
+   "pve31": {
+    "x": 2116
+   },
+   "pve52": {
+    "x": 8
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 24
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_1"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m12": {
+   "pvf1": {
+    "x": 66466
+   },
+   "pvf2": {
+    "x": 38
+   },
+   "pve32": {
+    "x": 120
+   },
+   "pve31": {
+    "x": 1050
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2.5
+   },
+   "pve53": {
+    "x": 15
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_1"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m13": {
+   "pvf1": {
+    "x": 51158
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 120
+   },
+   "pve31": {
+    "x": 870
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2.5
+   },
+   "pve53": {
+    "x": 15
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_1"
+   },
+   "pve59": {
+    "lv": "pve59_0"
+   }
+  },
+  "m14": {
+   "pvf1": {
+    "x": 125164
+   },
+   "pvf2": {
+    "x": 50
+   },
+   "pve32": {
+    "x": 140
+   },
+   "pve31": {
+    "x": 1850
+   },
+   "pve52": {
+    "x": 8
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 24
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_1"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m15": {
+   "pvf1": {
+    "x": 306160
+   },
+   "pvf2": {
+    "x": 90
+   },
+   "pve32": {
+    "x": 240
+   },
+   "pve31": {
+    "x": 4121
+   },
+   "pve52": {
+    "x": 8
+   },
+   "pve55": {
+    "x": 2.5
+   },
+   "pve53": {
+    "x": 30
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_1"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m16": {
+   "pvf1": {
+    "x": 47300
+   },
+   "pvf2": {
+    "x": 35
+   },
+   "pve32": {
+    "x": 90
+   },
+   "pve31": {
+    "x": 800
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_1"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m17": {
+   "pvf1": {
+    "x": 47300
+   },
+   "pvf2": {
+    "x": 35
+   },
+   "pve32": {
+    "x": 90
+   },
+   "pve31": {
+    "x": 800
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_1"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m18": {
+   "pvf1": {
+    "x": 32481
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 80
+   },
+   "pve31": {
+    "x": 615
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_1"
+   },
+   "pve59": {
+    "lv": "pve59_0"
+   }
+  },
+  "m19": {
+   "pvf1": {
+    "x": 30648
+   },
+   "pvf2": {
+    "x": 28
+   },
+   "pve32": {
+    "x": 80
+   },
+   "pve31": {
+    "x": 600
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_1"
+   },
+   "pve59": {
+    "lv": "pve59_0"
+   }
+  },
+  "m20": {
+   "pvf1": {
+    "x": 85511
+   },
+   "pvf2": {
+    "x": 50
+   },
+   "pve32": {
+    "x": 120
+   },
+   "pve31": {
+    "x": 1250
+   },
+   "pve52": {
+    "x": 8
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 24
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_1"
+   },
+   "pve59": {
+    "lv": "pve59_1"
+   }
+  },
+  "m21": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 80
+   },
+   "pve31": {
+    "x": 720
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_0"
+   }
+  },
+  "m22": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 110
+   },
+   "pve31": {
+    "x": 800
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 6
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_0"
+   }
+  },
+  "m23": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 50
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 1390
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 25
+   },
+   "pve53": {
+    "x": 29
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_0"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m24": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 65
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 1600
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 25
+   },
+   "pve53": {
+    "x": 35
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_0"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m25": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 50
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 1450
+   },
+   "pve52": {
+    "x": 6
+   },
+   "pve55": {
+    "x": 5
+   },
+   "pve53": {
+    "x": 14
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_0"
+   }
+  },
+  "m26": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 40
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 1560
+   },
+   "pve52": {
+    "x": 8
+   },
+   "pve55": {
+    "x": 5
+   },
+   "pve53": {
+    "x": 14
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_1"
+   }
+  },
+  "m27": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 35
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 1040
+   },
+   "pve52": {
+    "x": 6
+   },
+   "pve55": {
+    "x": 4
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_0"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m28": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 35
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 1250
+   },
+   "pve52": {
+    "x": 6
+   },
+   "pve55": {
+    "x": 4
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_0"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m29": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 35
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 1250
+   },
+   "pve52": {
+    "x": 6
+   },
+   "pve55": {
+    "x": 4
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_0"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m30": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 23
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 2000
+   },
+   "pve52": {
+    "x": 6
+   },
+   "pve55": {
+    "x": 25
+   },
+   "pve53": {
+    "x": 24
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m31": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 970
+   },
+   "pve52": {
+    "x": 6
+   },
+   "pve55": {
+    "x": 4
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m32": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 35
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 760
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 4
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_0"
+   }
+  },
+  "m33": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 35
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 1050
+   },
+   "pve52": {
+    "x": 6
+   },
+   "pve55": {
+    "x": 4
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m34": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 550
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 4
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_0"
+   }
+  },
+  "m35": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 40
+   },
+   "pve32": {
+    "x": 250
+   },
+   "pve31": {
+    "x": 2410
+   },
+   "pve52": {
+    "x": 12
+   },
+   "pve55": {
+    "x": 4
+   },
+   "pve53": {
+    "x": 24
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m36": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 35
+   },
+   "pve32": {
+    "x": 90
+   },
+   "pve31": {
+    "x": 2000
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m37": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 38
+   },
+   "pve32": {
+    "x": 120
+   },
+   "pve31": {
+    "x": 2000
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2.5
+   },
+   "pve53": {
+    "x": 14
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m38": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 50
+   },
+   "pve32": {
+    "x": 140
+   },
+   "pve31": {
+    "x": 2000
+   },
+   "pve52": {
+    "x": 8
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 24
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m39": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 50
+   },
+   "pve32": {
+    "x": 140
+   },
+   "pve31": {
+    "x": 2000
+   },
+   "pve52": {
+    "x": 8
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 24
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m40": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 60
+   },
+   "pve32": {
+    "x": 180
+   },
+   "pve31": {
+    "x": 2000
+   },
+   "pve52": {
+    "x": 8
+   },
+   "pve55": {
+    "x": 2.5
+   },
+   "pve53": {
+    "x": 14
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m41": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 50
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 2000
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "m42": {
+   "pvf1": {
+    "x": 24900
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 569
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2.5
+   },
+   "pve53": {
+    "x": 10
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_3"
+   }
+  },
+  "m43": {
+   "pvf1": {
+    "x": 21500
+   },
+   "pvf2": {
+    "x": 20
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 438
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 7
+   },
+   "pve53": {
+    "x": 4
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_3"
+   }
+  },
+  "m44": {
+   "pvf1": {
+    "x": 22500
+   },
+   "pvf2": {
+    "x": 25
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 516
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 5
+   },
+   "pve53": {
+    "x": 5
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_3"
+   }
+  },
+  "m45": {
+   "pvf1": {
+    "x": 30000
+   },
+   "pvf2": {
+    "x": 30
+   },
+   "pve32": {
+    "x": 147.2
+   },
+   "pve31": {
+    "x": 600
+   },
+   "pve52": {
+    "x": 4
+   },
+   "pve55": {
+    "x": 2
+   },
+   "pve53": {
+    "x": 12
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_4"
+   }
+  },
+  "ideal": {
+   "pvf1": {
+    "x": 16500
+   },
+   "pvf2": {
+    "x": 30.5
+   },
+   "pve32": {
+    "x": 89.3
+   },
+   "pve31": {
+    "x": 1100
+   },
+   "pve41": {
+    "lv": "pve41_1"
+   },
+   "pve42": {
+    "lv": "pve42_1"
+   },
+   "pve43": {
+    "lv": "pve43_1"
+   },
+   "pve52": {
+    "x": 5.5
+   },
+   "pve53": {
+    "x": 26.25
+   },
+   "pve54": {
+    "lv": "pve54_1"
+   },
+   "pve55": {
+    "x": 10
+   },
+   "pve56": {
+    "lv": "pve56_1"
+   },
+   "pve57": {
+    "lv": "pve57_1"
+   },
+   "pve58": {
+    "lv": "pve58_2"
+   },
+   "pve59": {
+    "lv": "pve59_2"
+   }
+  },
+  "antag": {
+   "pvf1": {
+    "x": 25500
+   },
+   "pvf2": {
+    "x": 25.5
+   },
+   "pve32": {
+    "x": 127.9
+   },
+   "pve31": {
+    "x": 1700
+   },
+   "pve41": {
+    "lv": "pve41_0"
+   },
+   "pve42": {
+    "lv": "pve42_0"
+   },
+   "pve43": {
+    "lv": "pve43_0"
+   },
+   "pve52": {
+    "x": 4.5
+   },
+   "pve53": {
+    "x": 18.75
+   },
+   "pve54": {
+    "lv": "pve54_0"
+   },
+   "pve55": {
+    "x": 20
+   },
+   "pve56": {
+    "lv": "pve56_0"
+   },
+   "pve57": {
+    "lv": "pve57_0"
+   },
+   "pve58": {
+    "lv": "pve58_0"
+   },
+   "pve59": {
+    "lv": "pve59_1"
+   }
+  }
+ },
+ "cb": {
+  "custos": [
+   "pvf1"
+  ],
+  "beneficios": [
+   "pvf2",
+   "pvf3",
+   "pvf4",
+   "pvf5"
+  ],
+  "pacotes": []
+ },
+ "sens": {
+  "no": "pvf3",
+  "pct": 10
+ },
+ "electre": {
+  "nivel": "pvf",
+  "crit": {},
+  "s": 0.7,
+  "lambda": 0.75,
+  "perfis": []
+ },
+ "recom": {
+  "texto": "Estudo original: sensibilidade de ±10% em consumo e produtividade e retas de sensibilidade (Figuras 6–9). Ver notas de dados ausentes nas descrições das ações."
+ },
+ "ui": {
+  "page": "avaliacao",
+  "selLeaf": "pvf1",
+  "selPai": "root",
+  "perfilSel": [
+   "ideal"
+  ],
+  "faixa": false
+ }
+}

@@ -1,0 +1,1656 @@
+{
+ "meta": {
+  "nome": "Adoção de tecnologias da Agricultura 4.0 — Canguçu/RS (Drews, 2024)",
+  "rotulo": "O potencial de adoção de tecnologias da Agricultura 4.0 por agricultores familiares de Canguçu/RS",
+  "descricao": "Dissertação de Mauro Lilles Pedrotti Drews (PPGDTSA/UFPel, 2024; orient. Mário Conill Gomes, coorient. Aline Soares Pereira). MCDA-C (Ensslin, Montibeller e Noronha, 2001): 3 PVFs e 11 PVEs, descritores Likert de 5 níveis com pontuação direta, pesos por swing weights definidos pelos sócios da startup, 14 agricultores entrevistados (ago–out/2024) e ordenamento por agregação aditiva (problemática da ordenação).",
+  "facilitador": "Mauro Lilles Pedrotti Drews",
+  "data": "2024-12-13"
+ },
+ "atores": [
+  {
+   "id": "at1",
+   "nome": "Sócios da startup agritech (Pelotas)",
+   "tipo": "decisor",
+   "poder": 9,
+   "interesse": 9,
+   "valores": "Democratizar o acesso a tecnologias no campo; módulos de atualização tecnológica de maquinário. Definiram a ordem de importância e os pesos."
+  },
+  {
+   "id": "at2",
+   "nome": "Autor (sócio majoritário e pesquisador)",
+   "tipo": "decisor",
+   "poder": 8,
+   "interesse": 10,
+   "valores": "Construção do modelo e condução das entrevistas."
+  },
+  {
+   "id": "at3",
+   "nome": "Especialistas externos (STR Pelotas, Emater, líderes regionais)",
+   "tipo": "interveniente",
+   "poder": 3,
+   "interesse": 5,
+   "valores": "Experiência prática; indicação e contato de agricultores."
+  },
+  {
+   "id": "at4",
+   "nome": "Orientadores (UFPel)",
+   "tipo": "interveniente",
+   "poder": 3,
+   "interesse": 5,
+   "valores": "Validação metodológica; decisão sobre os cartões após o pré-teste."
+  },
+  {
+   "id": "at5",
+   "nome": "Agricultores familiares de Canguçu/RS",
+   "tipo": "agido",
+   "poder": 2,
+   "interesse": 8,
+   "valores": "Beneficiados por maior consonância entre necessidades e oferta de tecnologias."
+  }
+ ],
+ "acoes": [
+  {
+   "id": "p01",
+   "nome": "Produtor #1",
+   "desc": "Porte Médio; terra por compra; 30 anos de experiência; UPF com 6 membros; safristas: Não; troca de serviços/maquinários: Sim; modalidade: Somente própria. Publicado (Tabela 20): Facilidade 100, Custos 86, Incertezas 100, Total 95,8, 1º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p02",
+   "nome": "Produtor #2",
+   "desc": "Porte Médio; terra por herança; 20 anos de experiência; UPF com 3 membros; safristas: Não; troca de serviços/maquinários: Não; modalidade: Arrenda. Publicado (Tabela 20): Facilidade 84, Custos 47, Incertezas 77, Total 70,2, 14º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais — em Incertezas a reconstrução não é única.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p03",
+   "nome": "Produtor #3",
+   "desc": "Porte Pequeno; terra por mista; 50 anos de experiência; UPF com 3 membros; safristas: Não; troca de serviços/maquinários: Sim; modalidade: Arrenda. Publicado (Tabela 20): Facilidade 93, Custos 85, Incertezas 87, Total 88,3, 3º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais — em Incertezas a reconstrução não é única.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p04",
+   "nome": "Produtor #4",
+   "desc": "Porte Pequeno; terra por herança; 40 anos de experiência; UPF com 4 membros; safristas: Não; troca de serviços/maquinários: Sim; modalidade: Somente própria. Publicado (Tabela 20): Facilidade 76, Custos 68, Incertezas 81, Total 75,5, 13º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais — em Incertezas a reconstrução não é única.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p05",
+   "nome": "Produtor #5",
+   "desc": "Porte Pequeno; terra por mista; 50 anos de experiência; UPF com 2 membros; safristas: Não; troca de serviços/maquinários: Sim; modalidade: Somente própria. Publicado (Tabela 20): Facilidade 83, Custos 85, Incertezas 90, Total 86,3, 6º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p06",
+   "nome": "Produtor #6",
+   "desc": "Porte Grande; terra por compra; 25 anos de experiência; UPF com 4 membros; safristas: Sim; troca de serviços/maquinários: Sim; modalidade: Arrenda. Publicado (Tabela 20): Facilidade 84, Custos 77, Incertezas 70, Total 76,6, 12º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais — em Incertezas a reconstrução não é única.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p07",
+   "nome": "Produtor #7",
+   "desc": "Porte Grande; terra por herança; 15 anos de experiência; UPF com 5 membros; safristas: Não; troca de serviços/maquinários: Não; modalidade: Somente própria. Publicado (Tabela 20): Facilidade 92, Custos 93, Incertezas 96, Total 93,7, 2º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p08",
+   "nome": "Produtor #8",
+   "desc": "Porte Médio; terra por herança; 50 anos de experiência; UPF com 3 membros; safristas: Sim; troca de serviços/maquinários: Não; modalidade: Somente própria. Publicado (Tabela 20): Facilidade 75, Custos 78, Incertezas 89, Total 80,9, 10º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais — em Incertezas a reconstrução não é única.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p09",
+   "nome": "Produtor #9",
+   "desc": "Porte Grande; terra por herança; 30 anos de experiência; UPF com 3 membros; safristas: Não; troca de serviços/maquinários: Sim; modalidade: Arrenda. Publicado (Tabela 20): Facilidade 91, Custos 76, Incertezas 95, Total 87,9, 4º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p10",
+   "nome": "Produtor #10",
+   "desc": "Porte Médio; terra por mista; 30 anos de experiência; UPF com 5 membros; safristas: Não; troca de serviços/maquinários: Sim; modalidade: Somente própria. Publicado (Tabela 20): Facilidade 100, Custos 78, Incertezas 79, Total 85,5, 7º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p11",
+   "nome": "Produtor #11",
+   "desc": "Porte Pequeno; terra por herança; 30 anos de experiência; UPF com 5 membros; safristas: Não; troca de serviços/maquinários: Sim; modalidade: Somente própria. Publicado (Tabela 20): Facilidade 100, Custos 70, Incertezas 88, Total 86,6, 5º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p12",
+   "nome": "Produtor #12",
+   "desc": "Porte Pequeno; terra por herança; 10 anos de experiência; UPF com 4 membros; safristas: Não; troca de serviços/maquinários: Não; modalidade: Parceria. Publicado (Tabela 20): Facilidade 83, Custos 76, Incertezas 82, Total 80,7, 11º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p13",
+   "nome": "Produtor #13",
+   "desc": "Porte Médio; terra por mista; 25 anos de experiência; UPF com 4 membros; safristas: Não; troca de serviços/maquinários: Sim; modalidade: Arrenda. Publicado (Tabela 20): Facilidade 100, Custos 70, Incertezas 77, Total 82,3, 8º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais — em Incertezas a reconstrução não é única.",
+   "real": true,
+   "global": true
+  },
+  {
+   "id": "p14",
+   "nome": "Produtor #14",
+   "desc": "Porte Médio; terra por mista; 10 anos de experiência; UPF com 2 membros; safristas: Não; troca de serviços/maquinários: Não; modalidade: Arrenda. Publicado (Tabela 20): Facilidade 77, Custos 86, Incertezas 84, Total 82,1, 9º lugar. Respostas Likert RECONSTRUÍDAS a partir da Tabela 20 e das frequências (Tabelas 17–19): a dissertação não publica as respostas individuais — em Incertezas a reconstrução não é única.",
+   "real": true,
+   "global": true
+  }
+ ],
+ "conjA": {
+  "interna": "fixo",
+  "externa": "permanente",
+  "notas": "14 agricultores familiares (amostragem intencional: 3 grandes >100 ha, 6 médios 20–100 ha, 5 pequenos 0–20 ha); um agricultor excluído por não se enquadrar como familiar."
+ },
+ "problematica": {
+  "tipo": "gamma",
+  "notas": "Problemática da ordenação: ranquear os agricultores do 1º ao 14º pelo potencial de adoção.",
+  "categorias": [],
+  "rejeicao": [],
+  "usarRejeicao": false
+ },
+ "epas": [
+  {
+   "id": "ep0",
+   "texto": "facilidade de operação",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep1",
+   "texto": "facilidade de instalação",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep2",
+   "texto": "penosidade",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep3",
+   "texto": "custo de aquisição",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep4",
+   "texto": "custo de manutenção",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep5",
+   "texto": "custos operacionais",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep6",
+   "texto": "flexibilidade operacional",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep7",
+   "texto": "adequabilidade às máquinas existentes",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep8",
+   "texto": "eficiência/eficácia",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep9",
+   "texto": "confiabilidade",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  },
+  {
+   "id": "ep10",
+   "texto": "assistência técnica",
+   "estrategia": "aspectos",
+   "autor": "at1",
+   "conceito": false
+  }
+ ],
+ "mapa": {
+  "conceitos": [],
+  "ligacoes": [],
+  "clusters": [],
+  "ramos": [],
+  "autorFiltro": "",
+  "clusterFiltro": "",
+  "linhaCluster": ""
+ },
+ "arvore": {
+  "nos": [
+   {
+    "id": "root",
+    "pai": null,
+    "nome": "Utilidade percebida — potencial de adoção de tecnologias da Agricultura 4.0",
+    "tipo": "raiz",
+    "w": 1,
+    "def": "Rótulo: potencial de adoção de tecnologias da Agricultura 4.0 por agricultores familiares de Canguçu/RS."
+   },
+   {
+    "id": "c1",
+    "pai": "root",
+    "nome": "1 Facilidade percebida",
+    "tipo": "PVF",
+    "w": 0.3333333333333333,
+    "def": "Tecnologias que ofereçam facilidade de uso, instalação e redução da penosidade.",
+    "essencial": true,
+    "controlavel": true
+   },
+   {
+    "id": "c2",
+    "pai": "root",
+    "nome": "2 Custos",
+    "tipo": "PVF",
+    "w": 0.2962962962962963,
+    "def": "Importância do custo na decisão de adquirir equipamentos, aplicativos ou tecnologias.",
+    "essencial": true,
+    "controlavel": true
+   },
+   {
+    "id": "c3",
+    "pai": "root",
+    "nome": "3 Incertezas",
+    "tipo": "PVF",
+    "w": 0.37037037037037035,
+    "def": "Riscos e incertezas associados à adoção.",
+    "essencial": true,
+    "controlavel": true
+   },
+   {
+    "id": "s11",
+    "pai": "c1",
+    "nome": "1.1 Operação",
+    "tipo": "PVE",
+    "w": 0.3333,
+    "def": "Tecnologia autoexplicativa, simples, intuitiva e fácil de operar (Card 1).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "construido",
+     "cont": "discreto",
+     "unid": "escala Likert",
+     "niveis": [
+      {
+       "id": "s11_0",
+       "rot": "Importância muito baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s11_1",
+       "rot": "Importância medianamente baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s11_2",
+       "rot": "Importância nem alta, nem baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s11_3",
+       "rot": "Importância medianamente alta",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s11_4",
+       "rot": "Importância muito alta",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "s11_4",
+     "neutro": "s11_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabelas 2–12 da dissertação (pontuação direta 0/25/50/75/100). A dissertação não define níveis Bom/Neutro; adotou-se Bom = N5 e Neutro = N1, o que mantém a escala original 0–100."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "s11_0": 0,
+      "s11_1": 25,
+      "s11_2": 50,
+      "s11_3": 75,
+      "s11_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "s12",
+    "pai": "c1",
+    "nome": "1.2 Instalação",
+    "tipo": "PVE",
+    "w": 0.2963,
+    "def": "Instalação simples (plug and play), feita pelo agricultor ou profissional de confiança (Card 2).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "construido",
+     "cont": "discreto",
+     "unid": "escala Likert",
+     "niveis": [
+      {
+       "id": "s12_0",
+       "rot": "Importância muito baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s12_1",
+       "rot": "Importância medianamente baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s12_2",
+       "rot": "Importância nem alta, nem baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s12_3",
+       "rot": "Importância medianamente alta",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s12_4",
+       "rot": "Importância muito alta",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "s12_4",
+     "neutro": "s12_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabelas 2–12 da dissertação (pontuação direta 0/25/50/75/100). A dissertação não define níveis Bom/Neutro; adotou-se Bom = N5 e Neutro = N1, o que mantém a escala original 0–100."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "s12_0": 0,
+      "s12_1": 25,
+      "s12_2": 50,
+      "s12_3": 75,
+      "s12_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "s13",
+    "pai": "c1",
+    "nome": "1.3 Penosidade",
+    "tipo": "PVE",
+    "w": 0.3704,
+    "def": "Reduzir esforço repetitivo, intenso e demorado (Card 3).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "construido",
+     "cont": "discreto",
+     "unid": "escala Likert",
+     "niveis": [
+      {
+       "id": "s13_0",
+       "rot": "Importância muito baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s13_1",
+       "rot": "Importância medianamente baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s13_2",
+       "rot": "Importância nem alta, nem baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s13_3",
+       "rot": "Importância medianamente alta",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s13_4",
+       "rot": "Importância muito alta",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "s13_4",
+     "neutro": "s13_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabelas 2–12 da dissertação (pontuação direta 0/25/50/75/100). A dissertação não define níveis Bom/Neutro; adotou-se Bom = N5 e Neutro = N1, o que mantém a escala original 0–100."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "s13_0": 0,
+      "s13_1": 25,
+      "s13_2": 50,
+      "s13_3": 75,
+      "s13_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "s21",
+    "pai": "c2",
+    "nome": "2.1 Aquisição",
+    "tipo": "PVE",
+    "w": 0.28,
+    "def": "Preço de compra (Card 4).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "construido",
+     "cont": "discreto",
+     "unid": "escala Likert",
+     "niveis": [
+      {
+       "id": "s21_0",
+       "rot": "Importância muito baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s21_1",
+       "rot": "Importância medianamente baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s21_2",
+       "rot": "Importância nem alta, nem baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s21_3",
+       "rot": "Importância medianamente alta",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s21_4",
+       "rot": "Importância muito alta",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "s21_4",
+     "neutro": "s21_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabelas 2–12 da dissertação (pontuação direta 0/25/50/75/100). A dissertação não define níveis Bom/Neutro; adotou-se Bom = N5 e Neutro = N1, o que mantém a escala original 0–100."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "s21_0": 0,
+      "s21_1": 25,
+      "s21_2": 50,
+      "s21_3": 75,
+      "s21_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "s22",
+    "pai": "c2",
+    "nome": "2.2 Manutenção",
+    "tipo": "PVE",
+    "w": 0.32,
+    "def": "Custo com revisões, troca de componentes, ajustes e consertos (Card 5).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "construido",
+     "cont": "discreto",
+     "unid": "escala Likert",
+     "niveis": [
+      {
+       "id": "s22_0",
+       "rot": "Importância muito baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s22_1",
+       "rot": "Importância medianamente baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s22_2",
+       "rot": "Importância nem alta, nem baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s22_3",
+       "rot": "Importância medianamente alta",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s22_4",
+       "rot": "Importância muito alta",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "s22_4",
+     "neutro": "s22_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabelas 2–12 da dissertação (pontuação direta 0/25/50/75/100). A dissertação não define níveis Bom/Neutro; adotou-se Bom = N5 e Neutro = N1, o que mantém a escala original 0–100."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "s22_0": 0,
+      "s22_1": 25,
+      "s22_2": 50,
+      "s22_3": 75,
+      "s22_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "s23",
+    "pai": "c2",
+    "nome": "2.3 Operacionais",
+    "tipo": "PVE",
+    "w": 0.4,
+    "def": "Redução dos custos da atividade agrícola (Card 6).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "construido",
+     "cont": "discreto",
+     "unid": "escala Likert",
+     "niveis": [
+      {
+       "id": "s23_0",
+       "rot": "Importância muito baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s23_1",
+       "rot": "Importância medianamente baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s23_2",
+       "rot": "Importância nem alta, nem baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s23_3",
+       "rot": "Importância medianamente alta",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s23_4",
+       "rot": "Importância muito alta",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "s23_4",
+     "neutro": "s23_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabelas 2–12 da dissertação (pontuação direta 0/25/50/75/100). A dissertação não define níveis Bom/Neutro; adotou-se Bom = N5 e Neutro = N1, o que mantém a escala original 0–100."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "s23_0": 0,
+      "s23_1": 25,
+      "s23_2": 50,
+      "s23_3": 75,
+      "s23_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "s31",
+    "pai": "c3",
+    "nome": "3.1 Flexibilidade operacional",
+    "tipo": "PVE",
+    "w": 0.2703,
+    "def": "Manter a operação mesmo com falha do sistema; retorno fácil ao modo convencional (Card 7).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "construido",
+     "cont": "discreto",
+     "unid": "escala Likert",
+     "niveis": [
+      {
+       "id": "s31_0",
+       "rot": "Importância muito baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s31_1",
+       "rot": "Importância medianamente baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s31_2",
+       "rot": "Importância nem alta, nem baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s31_3",
+       "rot": "Importância medianamente alta",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s31_4",
+       "rot": "Importância muito alta",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "s31_4",
+     "neutro": "s31_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabelas 2–12 da dissertação (pontuação direta 0/25/50/75/100). A dissertação não define níveis Bom/Neutro; adotou-se Bom = N5 e Neutro = N1, o que mantém a escala original 0–100."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "s31_0": 0,
+      "s31_1": 25,
+      "s31_2": 50,
+      "s31_3": 75,
+      "s31_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "s32",
+    "pai": "c3",
+    "nome": "3.2 Adequabilidade",
+    "tipo": "PVE",
+    "w": 0.2432,
+    "def": "Compatibilidade com trator, pulverizador, celular que já possui (Card 8).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "construido",
+     "cont": "discreto",
+     "unid": "escala Likert",
+     "niveis": [
+      {
+       "id": "s32_0",
+       "rot": "Importância muito baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s32_1",
+       "rot": "Importância medianamente baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s32_2",
+       "rot": "Importância nem alta, nem baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s32_3",
+       "rot": "Importância medianamente alta",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s32_4",
+       "rot": "Importância muito alta",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "s32_4",
+     "neutro": "s32_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabelas 2–12 da dissertação (pontuação direta 0/25/50/75/100). A dissertação não define níveis Bom/Neutro; adotou-se Bom = N5 e Neutro = N1, o que mantém a escala original 0–100."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "s32_0": 0,
+      "s32_1": 25,
+      "s32_2": 50,
+      "s32_3": 75,
+      "s32_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "s33",
+    "pai": "c3",
+    "nome": "3.3 Eficiência/Eficácia",
+    "tipo": "PVE",
+    "w": 0.1892,
+    "def": "Incerteza sobre o impacto da tecnologia no desempenho da operação (Card 9).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "construido",
+     "cont": "discreto",
+     "unid": "escala Likert",
+     "niveis": [
+      {
+       "id": "s33_0",
+       "rot": "Importância muito baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s33_1",
+       "rot": "Importância medianamente baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s33_2",
+       "rot": "Importância nem alta, nem baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s33_3",
+       "rot": "Importância medianamente alta",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s33_4",
+       "rot": "Importância muito alta",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "s33_4",
+     "neutro": "s33_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabelas 2–12 da dissertação (pontuação direta 0/25/50/75/100). A dissertação não define níveis Bom/Neutro; adotou-se Bom = N5 e Neutro = N1, o que mantém a escala original 0–100."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "s33_0": 0,
+      "s33_1": 25,
+      "s33_2": 50,
+      "s33_3": 75,
+      "s33_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "s34",
+    "pai": "c3",
+    "nome": "3.4 Confiabilidade",
+    "tipo": "PVE",
+    "w": 0.1622,
+    "def": "Dúvida se a tecnologia aguenta a lida e cumpre a função (Card 10).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "construido",
+     "cont": "discreto",
+     "unid": "escala Likert",
+     "niveis": [
+      {
+       "id": "s34_0",
+       "rot": "Importância muito baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s34_1",
+       "rot": "Importância medianamente baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s34_2",
+       "rot": "Importância nem alta, nem baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s34_3",
+       "rot": "Importância medianamente alta",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s34_4",
+       "rot": "Importância muito alta",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "s34_4",
+     "neutro": "s34_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabelas 2–12 da dissertação (pontuação direta 0/25/50/75/100). A dissertação não define níveis Bom/Neutro; adotou-se Bom = N5 e Neutro = N1, o que mantém a escala original 0–100."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "s34_0": 0,
+      "s34_1": 25,
+      "s34_2": 50,
+      "s34_3": 75,
+      "s34_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   },
+   {
+    "id": "s35",
+    "pai": "c3",
+    "nome": "3.5 Assistência técnica",
+    "tipo": "PVE",
+    "w": 0.1351,
+    "def": "Facilidade, qualidade e rapidez no pós-venda (Card 11).",
+    "essencial": true,
+    "controlavel": true,
+    "dsc": {
+     "tipo": "quali",
+     "classe": "construido",
+     "cont": "discreto",
+     "unid": "escala Likert",
+     "niveis": [
+      {
+       "id": "s35_0",
+       "rot": "Importância muito baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s35_1",
+       "rot": "Importância medianamente baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s35_2",
+       "rot": "Importância nem alta, nem baixa",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s35_3",
+       "rot": "Importância medianamente alta",
+       "desc": "",
+       "x": ""
+      },
+      {
+       "id": "s35_4",
+       "rot": "Importância muito alta",
+       "desc": "",
+       "x": ""
+      }
+     ],
+     "bom": "s35_4",
+     "neutro": "s35_0",
+     "props": {
+      "mensuravel": true,
+      "operacional": true,
+      "compreensivel": true
+     },
+     "obs": "Tabelas 2–12 da dissertação (pontuação direta 0/25/50/75/100). A dissertação não define níveis Bom/Neutro; adotou-se Bom = N5 e Neutro = N1, o que mantém a escala original 0–100."
+    },
+    "vf": {
+     "metodo": "direta",
+     "orig": {
+      "s35_0": 0,
+      "s35_1": 25,
+      "s35_2": 50,
+      "s35_3": 75,
+      "s35_4": 100
+     },
+     "bis": {},
+     "mac": {}
+    }
+   }
+  ],
+  "familia": {}
+ },
+ "indep": {},
+ "pesos": {
+  "root": {
+   "metodo": "swing",
+   "ord": {},
+   "swing": {
+    "c1": 90,
+    "c2": 80,
+    "c3": 100
+   },
+   "trade": {
+    "ref": "",
+    "v": {}
+   },
+   "mac": {},
+   "soma": {},
+   "somaModo": "linhas",
+   "res": {}
+  },
+  "c1": {
+   "metodo": "swing",
+   "ord": {},
+   "swing": {
+    "s11": 90,
+    "s12": 80,
+    "s13": 100
+   },
+   "trade": {
+    "ref": "",
+    "v": {}
+   },
+   "mac": {},
+   "soma": {},
+   "somaModo": "linhas",
+   "res": {
+    "swing": {
+     "s11": 0.3333333333333333,
+     "s12": 0.2962962962962963,
+     "s13": 0.37037037037037035
+    }
+   }
+  },
+  "c2": {
+   "metodo": "swing",
+   "ord": {},
+   "swing": {
+    "s21": 70,
+    "s22": 80,
+    "s23": 100
+   },
+   "trade": {
+    "ref": "",
+    "v": {}
+   },
+   "mac": {},
+   "soma": {},
+   "somaModo": "linhas",
+   "res": {
+    "swing": {
+     "s21": 0.28,
+     "s22": 0.32,
+     "s23": 0.4
+    }
+   }
+  },
+  "c3": {
+   "metodo": "swing",
+   "ord": {},
+   "swing": {
+    "s31": 100,
+    "s32": 90,
+    "s33": 70,
+    "s34": 60,
+    "s35": 50
+   },
+   "trade": {
+    "ref": "",
+    "v": {}
+   },
+   "mac": {},
+   "soma": {},
+   "somaModo": "linhas",
+   "res": {
+    "swing": {
+     "s31": 0.2702702702702703,
+     "s32": 0.24324324324324326,
+     "s33": 0.1891891891891892,
+     "s34": 0.16216216216216217,
+     "s35": 0.13513513513513514
+    }
+   }
+  }
+ },
+ "desempenho": {
+  "p01": {
+   "s11": {
+    "lv": "s11_4"
+   },
+   "s12": {
+    "lv": "s12_4"
+   },
+   "s13": {
+    "lv": "s13_4"
+   },
+   "s21": {
+    "lv": "s21_2"
+   },
+   "s22": {
+    "lv": "s22_4"
+   },
+   "s23": {
+    "lv": "s23_4"
+   },
+   "s31": {
+    "lv": "s31_4"
+   },
+   "s32": {
+    "lv": "s32_4"
+   },
+   "s33": {
+    "lv": "s33_4"
+   },
+   "s34": {
+    "lv": "s34_4"
+   },
+   "s35": {
+    "lv": "s35_4"
+   }
+  },
+  "p02": {
+   "s11": {
+    "lv": "s11_3"
+   },
+   "s12": {
+    "lv": "s12_3"
+   },
+   "s13": {
+    "lv": "s13_4"
+   },
+   "s21": {
+    "lv": "s21_3"
+   },
+   "s22": {
+    "lv": "s22_2"
+   },
+   "s23": {
+    "lv": "s23_1"
+   },
+   "s31": {
+    "lv": "s31_3"
+   },
+   "s32": {
+    "lv": "s32_4"
+   },
+   "s33": {
+    "lv": "s33_2"
+   },
+   "s34": {
+    "lv": "s34_4"
+   },
+   "s35": {
+    "lv": "s35_2"
+   }
+  },
+  "p03": {
+   "s11": {
+    "lv": "s11_4"
+   },
+   "s12": {
+    "lv": "s12_3"
+   },
+   "s13": {
+    "lv": "s13_4"
+   },
+   "s21": {
+    "lv": "s21_3"
+   },
+   "s22": {
+    "lv": "s22_3"
+   },
+   "s23": {
+    "lv": "s23_4"
+   },
+   "s31": {
+    "lv": "s31_3"
+   },
+   "s32": {
+    "lv": "s32_3"
+   },
+   "s33": {
+    "lv": "s33_4"
+   },
+   "s34": {
+    "lv": "s34_4"
+   },
+   "s35": {
+    "lv": "s35_4"
+   }
+  },
+  "p04": {
+   "s11": {
+    "lv": "s11_2"
+   },
+   "s12": {
+    "lv": "s12_3"
+   },
+   "s13": {
+    "lv": "s13_4"
+   },
+   "s21": {
+    "lv": "s21_2"
+   },
+   "s22": {
+    "lv": "s22_3"
+   },
+   "s23": {
+    "lv": "s23_3"
+   },
+   "s31": {
+    "lv": "s31_2"
+   },
+   "s32": {
+    "lv": "s32_3"
+   },
+   "s33": {
+    "lv": "s33_4"
+   },
+   "s34": {
+    "lv": "s34_4"
+   },
+   "s35": {
+    "lv": "s35_4"
+   }
+  },
+  "p05": {
+   "s11": {
+    "lv": "s11_4"
+   },
+   "s12": {
+    "lv": "s12_3"
+   },
+   "s13": {
+    "lv": "s13_3"
+   },
+   "s21": {
+    "lv": "s21_3"
+   },
+   "s22": {
+    "lv": "s22_3"
+   },
+   "s23": {
+    "lv": "s23_4"
+   },
+   "s31": {
+    "lv": "s31_4"
+   },
+   "s32": {
+    "lv": "s32_3"
+   },
+   "s33": {
+    "lv": "s33_4"
+   },
+   "s34": {
+    "lv": "s34_3"
+   },
+   "s35": {
+    "lv": "s35_4"
+   }
+  },
+  "p06": {
+   "s11": {
+    "lv": "s11_3"
+   },
+   "s12": {
+    "lv": "s12_3"
+   },
+   "s13": {
+    "lv": "s13_4"
+   },
+   "s21": {
+    "lv": "s21_3"
+   },
+   "s22": {
+    "lv": "s22_2"
+   },
+   "s23": {
+    "lv": "s23_4"
+   },
+   "s31": {
+    "lv": "s31_4"
+   },
+   "s32": {
+    "lv": "s32_2"
+   },
+   "s33": {
+    "lv": "s33_3"
+   },
+   "s34": {
+    "lv": "s34_4"
+   },
+   "s35": {
+    "lv": "s35_0"
+   }
+  },
+  "p07": {
+   "s11": {
+    "lv": "s11_3"
+   },
+   "s12": {
+    "lv": "s12_4"
+   },
+   "s13": {
+    "lv": "s13_4"
+   },
+   "s21": {
+    "lv": "s21_3"
+   },
+   "s22": {
+    "lv": "s22_4"
+   },
+   "s23": {
+    "lv": "s23_4"
+   },
+   "s31": {
+    "lv": "s31_4"
+   },
+   "s32": {
+    "lv": "s32_4"
+   },
+   "s33": {
+    "lv": "s33_4"
+   },
+   "s34": {
+    "lv": "s34_3"
+   },
+   "s35": {
+    "lv": "s35_4"
+   }
+  },
+  "p08": {
+   "s11": {
+    "lv": "s11_3"
+   },
+   "s12": {
+    "lv": "s12_3"
+   },
+   "s13": {
+    "lv": "s13_3"
+   },
+   "s21": {
+    "lv": "s21_2"
+   },
+   "s22": {
+    "lv": "s22_3"
+   },
+   "s23": {
+    "lv": "s23_4"
+   },
+   "s31": {
+    "lv": "s31_3"
+   },
+   "s32": {
+    "lv": "s32_4"
+   },
+   "s33": {
+    "lv": "s33_3"
+   },
+   "s34": {
+    "lv": "s34_4"
+   },
+   "s35": {
+    "lv": "s35_4"
+   }
+  },
+  "p09": {
+   "s11": {
+    "lv": "s11_4"
+   },
+   "s12": {
+    "lv": "s12_4"
+   },
+   "s13": {
+    "lv": "s13_3"
+   },
+   "s21": {
+    "lv": "s21_2"
+   },
+   "s22": {
+    "lv": "s22_4"
+   },
+   "s23": {
+    "lv": "s23_3"
+   },
+   "s31": {
+    "lv": "s31_4"
+   },
+   "s32": {
+    "lv": "s32_4"
+   },
+   "s33": {
+    "lv": "s33_3"
+   },
+   "s34": {
+    "lv": "s34_4"
+   },
+   "s35": {
+    "lv": "s35_4"
+   }
+  },
+  "p10": {
+   "s11": {
+    "lv": "s11_4"
+   },
+   "s12": {
+    "lv": "s12_4"
+   },
+   "s13": {
+    "lv": "s13_4"
+   },
+   "s21": {
+    "lv": "s21_2"
+   },
+   "s22": {
+    "lv": "s22_3"
+   },
+   "s23": {
+    "lv": "s23_4"
+   },
+   "s31": {
+    "lv": "s31_4"
+   },
+   "s32": {
+    "lv": "s32_2"
+   },
+   "s33": {
+    "lv": "s33_3"
+   },
+   "s34": {
+    "lv": "s34_3"
+   },
+   "s35": {
+    "lv": "s35_4"
+   }
+  },
+  "p11": {
+   "s11": {
+    "lv": "s11_4"
+   },
+   "s12": {
+    "lv": "s12_4"
+   },
+   "s13": {
+    "lv": "s13_4"
+   },
+   "s21": {
+    "lv": "s21_2"
+   },
+   "s22": {
+    "lv": "s22_2"
+   },
+   "s23": {
+    "lv": "s23_4"
+   },
+   "s31": {
+    "lv": "s31_4"
+   },
+   "s32": {
+    "lv": "s32_2"
+   },
+   "s33": {
+    "lv": "s33_4"
+   },
+   "s34": {
+    "lv": "s34_4"
+   },
+   "s35": {
+    "lv": "s35_4"
+   }
+  },
+  "p12": {
+   "s11": {
+    "lv": "s11_4"
+   },
+   "s12": {
+    "lv": "s12_3"
+   },
+   "s13": {
+    "lv": "s13_3"
+   },
+   "s21": {
+    "lv": "s21_2"
+   },
+   "s22": {
+    "lv": "s22_4"
+   },
+   "s23": {
+    "lv": "s23_3"
+   },
+   "s31": {
+    "lv": "s31_4"
+   },
+   "s32": {
+    "lv": "s32_3"
+   },
+   "s33": {
+    "lv": "s33_4"
+   },
+   "s34": {
+    "lv": "s34_1"
+   },
+   "s35": {
+    "lv": "s35_4"
+   }
+  },
+  "p13": {
+   "s11": {
+    "lv": "s11_4"
+   },
+   "s12": {
+    "lv": "s12_4"
+   },
+   "s13": {
+    "lv": "s13_4"
+   },
+   "s21": {
+    "lv": "s21_2"
+   },
+   "s22": {
+    "lv": "s22_2"
+   },
+   "s23": {
+    "lv": "s23_4"
+   },
+   "s31": {
+    "lv": "s31_3"
+   },
+   "s32": {
+    "lv": "s32_4"
+   },
+   "s33": {
+    "lv": "s33_2"
+   },
+   "s34": {
+    "lv": "s34_4"
+   },
+   "s35": {
+    "lv": "s35_2"
+   }
+  },
+  "p14": {
+   "s11": {
+    "lv": "s11_3"
+   },
+   "s12": {
+    "lv": "s12_2"
+   },
+   "s13": {
+    "lv": "s13_4"
+   },
+   "s21": {
+    "lv": "s21_2"
+   },
+   "s22": {
+    "lv": "s22_4"
+   },
+   "s23": {
+    "lv": "s23_4"
+   },
+   "s31": {
+    "lv": "s31_4"
+   },
+   "s32": {
+    "lv": "s32_4"
+   },
+   "s33": {
+    "lv": "s33_2"
+   },
+   "s34": {
+    "lv": "s34_4"
+   },
+   "s35": {
+    "lv": "s35_2"
+   }
+  }
+ },
+ "cb": {
+  "custos": [],
+  "beneficios": [],
+  "pacotes": []
+ },
+ "sens": {
+  "no": "c1",
+  "pct": 10
+ },
+ "electre": {
+  "nivel": "pvf",
+  "crit": {},
+  "s": 0.7,
+  "lambda": 0.75,
+  "perfis": []
+ },
+ "recom": {
+  "texto": "Dissertação: Facilidade Percebida foi o critério mais valorizado; Custos relevante mas não determinante; recomenda-se foco em suporte técnico ágil, robustez/confiabilidade, facilidade de operação e flexibilidade operacional, com demonstrações práticas para reduzir incertezas."
+ },
+ "ui": {
+  "page": "avaliacao",
+  "selLeaf": "s11",
+  "selPai": "root",
+  "perfilSel": [
+   "p01",
+   "p02"
+  ],
+  "faixa": false
+ }
+}

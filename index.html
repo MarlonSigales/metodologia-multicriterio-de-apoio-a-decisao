@@ -512,16 +512,44 @@ ${mono?'':'<div class="msg bad">A função não é monotônica em relação à o
 </div></div>`;};
 
 /* ---------------- 12. Taxas de substituição ---------------- */
-function pz(pid){if(!S.pesos[pid])S.pesos[pid]={metodo:'direto',ord:{},swing:{},trade:{ref:'',v:{}},mac:{}};return S.pesos[pid];}
+function pz(pid){if(!S.pesos[pid])S.pesos[pid]={metodo:'direto',ord:{},swing:{},trade:{ref:'',v:{}},mac:{}};const pp=S.pesos[pid];if(!pp.soma)pp.soma={};if(!pp.somaModo)pp.somaModo='linhas';if(!pp.res)pp.res={};return pp;}
+/* Comparação par a par de soma constante (0–100): relação recíproca aditiva r_ij + r_ji = 1 */
+function somaR(pid){const ids=filhos(pid).map(c=>c.id),pp=pz(pid),n=ids.length;const R=ids.map(()=>new Array(n).fill(0.5));
+ for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){const a=pn(pp.soma[ids[i]+'_'+ids[j]]);const r=(a==null?50:a)/100;R[i][j]=r;R[j][i]=1-r;}return{ids,R,n};}
+function somaPesos(pid,modo){const{ids,R,n}=somaR(pid);const w={};
+ if(modo==='geom'){const m=(r)=>Math.min(9,Math.max(1/9,r>=1?9:r<=0?1/9:r/(1-r)));const g=ids.map((_,i)=>Math.pow(ids.reduce((p,_,j)=>p*(i===j?1:m(R[i][j])),1),1/n));const s=g.reduce((a,b)=>a+b,0);ids.forEach((id,i)=>w[id]=g[i]/s);}
+ else{const T=n*(n-1)/2;ids.forEach((id,i)=>w[id]=R[i].reduce((s,r,j)=>s+(i===j?0:r),0)/T);}return w;}
+function somaConsist(pid){const{ids,R,n}=somaR(pid);let s=0,c=0;const pior=[];
+ for(let i=0;i<n;i++)for(let j=0;j<n;j++)for(let k=0;k<n;k++){if(i===j||j===k||i===k)continue;const e=Math.abs(R[i][j]+R[j][k]-R[i][k]-0.5);s+=e;c++;if(i<k)pior.push({i:ids[i],j:ids[j],k:ids[k],e,est:Math.max(0,Math.min(100,(R[i][j]+R[j][k]-0.5)*100)),dado:R[i][k]*100});}
+ pior.sort((a,b)=>b.e-a.e);return{ci:c?s/c:0,pior:pior.filter(x=>x.e>0.05).slice(0,5)};}
+function kendall(a,b,ids){let s=0,c=0;for(let i=0;i<ids.length;i++)for(let j=i+1;j<ids.length;j++){const x=Math.sign(a[ids[i]]-a[ids[j]]),y=Math.sign(b[ids[i]]-b[ids[j]]);s+=x*y;c++;}return c?s/c:1;}
 function saltoTxt(c){let l=c;if(!isLeaf(c)){const ls=dfs(c.id).map(x=>x.n).filter(isLeaf);if(!ls.length)return'—';l=ls.reduce((a,b)=>gw(b.id)>gw(a.id)?b:a);}const d=dsc(l);return`${isLeaf(c)?'':esc(l.nome)+': '}${esc(nivelTxt(l,'neutro'))} → ${esc(nivelTxt(l,'bom'))}`;}
 function ordemFilhos(pid){const ch=filhos(pid).map(c=>c.id);const r=roberts(ch,pz(pid).ord);return r.miss||r.viol.length?ch:r.order;}
 function calcPesos(pid){const pp=pz(pid),ch=filhos(pid);let w={};
  if(pp.metodo==='direto'){ch.forEach(c=>w[c.id]=+c.w||0);}
  if(pp.metodo==='swing'){ch.forEach(c=>w[c.id]=pn(pp.swing[c.id])||0);}
  if(pp.metodo==='trade'){if(!pp.trade.ref)return alert('Escolha o critério de referência.');ch.forEach(c=>w[c.id]=c.id===pp.trade.ref?1:(pn(pp.trade.v[c.id])||0)/100);}
+ if(pp.metodo==='soma'){w=somaPesos(pid,pp.somaModo);}
  if(pp.metodo==='mac'){const ord=ordemFilhos(pid);const items=[...ord,'A0'];const J=items.map((a,i)=>items.map((b,j)=>i<j?pp.mac[a+'_'+b]:null));const{res}=macbeth(items.length,J);
   if(res.status!=='ok')return alert(res.status==='infeasible'?'Julgamentos inconsistentes: revise a matriz.':'Falha no PL.');ord.forEach((c,i)=>w[c]=res.x[i]);}
- const s=Object.values(w).reduce((a,b)=>a+b,0);if(!s)return alert('Soma nula.');ch.forEach(c=>c.w=+(w[c.id]/s).toFixed(4));commit();}
+ const s=Object.values(w).reduce((a,b)=>a+b,0);if(!s)return alert('Soma nula.');const wn2={};ch.forEach(c=>{wn2[c.id]=w[c.id]/s;c.w=+(w[c.id]/s).toFixed(4);});pp.res[pp.metodo==='soma'?'soma_'+pp.somaModo:pp.metodo]=wn2;commit();}
+const RES_LAB={direto:'Direto',swing:'Swing',trade:'Trade-off',mac:'MACBETH',soma_linhas:'Soma const. (linhas)',soma_geom:'Soma const. (média geom.)'};
+function somaUI(pid){const pp=pz(pid),ch=filhos(pid),n=ch.length,base=`pesos.${pid}`;const wl=somaPesos(pid,'linhas'),wg=somaPesos(pid,'geom'),cs=somaConsist(pid);let rows='';
+ for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){const A=ch[i],B=ch[j],k=A.id+'_'+B.id,a=pn(pp.soma[k])??50;
+  rows+=`<tr><td style="text-align:right"><b>${esc(A.nome)}</b><div style="font-size:11px;color:#888">${saltoTxt(A)}</div></td><td style="min-width:220px"><input type="range" min="0" max="100" step="5" value="${a}" style="width:100%" oninput="this.parentNode.nextElementSibling.textContent=this.value+' | '+(100-this.value)" onchange="setP('${base}.soma.${k}',+this.value)"></td><td class="num" style="white-space:nowrap">${a} | ${100-a}</td><td><b>${esc(B.nome)}</b><div style="font-size:11px;color:#888">${saltoTxt(B)}</div></td></tr>`;}
+ const teto=2/n;const zeros=ch.filter(c=>wl[c.id]<1e-9);const noTeto=ch.filter(c=>wl[c.id]>=teto-1e-9);
+ return`<p class="hint">Para cada par, divida 100 pontos entre os <b>saltos Neutro→Bom</b> dos dois critérios (50 | 50 = indiferença). Pergunta: “Entre levar <i>este</i> critério de Neutro a Bom ou levar <i>aquele</i> de Neutro a Bom, como você distribui 100 pontos?”. Forma uma relação de preferência recíproca aditiva (a<sub>ij</sub> + a<sub>ji</sub> = 100) — comparações de soma constante (Comrey, 1950) / relação fuzzy recíproca (Tanino, 1984).</p>
+ <table>${rows}</table>
+ <div><b>Derivação dos pesos:</b><label style="color:var(--ink);display:flex;gap:8px;align-items:center;margin:4px 0"><input style="width:auto;margin:0" type="radio" name="sm" ${pp.somaModo==='linhas'?'checked':''} onchange="setP('${base}.somaModo','linhas')"> soma das linhas normalizada (matriz de Roberts quantitativa)</label><label style="color:var(--ink);display:flex;gap:8px;align-items:center;margin:4px 0"><input style="width:auto;margin:0" type="radio" name="sm" ${pp.somaModo==='geom'?'checked':''} onchange="setP('${base}.somaModo','geom')"> conversão multiplicativa a/(100−a) ∈ [1/9, 9] e média geométrica</label></div>
+ <table><tr><th>Critério</th><th>Soma da linha</th><th>Peso (linhas)</th><th>Peso (média geom.)</th></tr>${ch.map((c,i)=>`<tr><td>${esc(c.nome)}</td><td class="num">${f(wl[c.id]*100*n*(n-1)/2,0)}</td><td class="num">${f(wl[c.id]*100,1)}%</td><td class="num">${f(wg[c.id]*100,1)}%</td></tr>`).join('')}<tr><td>Total</td><td class="num">${100*n*(n-1)/2}</td><td class="num">100%</td><td class="num">100%</td></tr></table>
+ <div class="msg ${cs.ci<=0.1?'ok':cs.ci<=0.2?'warn':'bad'}"><b>Índice de inconsistência aditiva</b> = média |r<sub>ij</sub> + r<sub>jk</sub> − r<sub>ik</sub> − 0,5| = <b>${f(cs.ci,3)}</b> (0 = consistente; referência heurística: ≤ 0,10 aceitável, > 0,20 revisar).
+ ${cs.pior.length?`<br>Maiores desvios da transitividade aditiva:<br>${cs.pior.map(x=>`• ${esc(no(x.i).nome)} × ${esc(no(x.k).nome)}: informado ${f(x.dado,0)} | ${f(100-x.dado,0)}; coerente via ${esc(no(x.j).nome)} ≈ ${f(x.est,0)} | ${f(100-x.est,0)}`).join('<br>')}`:''}</div>
+ <div class="msg warn">Limites estruturais da soma das linhas: peso máximo possível = 2/n = <b>${f(teto*100,1)}%</b> (critério que vence todos os pares por 100 | 0) e mínimo = 0%.${noTeto.length?` <b>${noTeto.map(c=>esc(c.nome)).join(', ')}</b> atingiu o teto.`:''}${zeros.length?` <b>${zeros.map(c=>esc(c.nome)).join(', ')}</b> ficou com peso 0 — o critério deixa de influenciar o modelo (contraria a propriedade “essencial” da família de PVFs).`:''} A conversão multiplicativa não tem teto 2/n, mas satura em razões 9:1.</div>`;}
+function comparaUI(pid){const pp=pz(pid),ch=filhos(pid),ids=ch.map(c=>c.id);const ks=Object.keys(pp.res).filter(k=>ids.every(id=>pp.res[k][id]!=null));if(ks.length<1)return'';const ref=ks[0];
+ return`<div class="card"><h3>Comparação entre métodos (último cálculo de cada um)</h3><p class="hint">Validade convergente: métodos diferentes aplicados aos mesmos decisores devem produzir ordens semelhantes. τ de Kendall em relação a “${RES_LAB[ref]||ref}”.</p>
+ <table><tr><th>Critério</th>${ks.map(k=>`<th>${RES_LAB[k]||k}</th>`).join('')}</tr>${ch.map(c=>`<tr><td>${esc(c.nome)}</td>${ks.map(k=>`<td class="num">${f(pp.res[k][c.id]*100,1)}%</td>`).join('')}</tr>`).join('')}
+ <tr><td><i>τ de Kendall</i></td>${ks.map(k=>`<td class="num">${f(kendall(pp.res[ref],pp.res[k],ids),2)}</td>`).join('')}</tr></table>
+ <div class="row"><button class="s x" onclick="S.pesos['${pid}'].res={};commit()">Limpar comparação</button></div></div>`;}
 P.pesos=()=>{const I=internos();if(!I.find(n=>n.id===S.ui.selPai))S.ui.selPai=I[0]?I[0].id:'root';const pid=S.ui.selPai,p=no(pid);if(!p||!filhos(pid).length)return`<h2>12. Taxas de substituição</h2><p class="hint">Construa a árvore primeiro.</p>`;
  const ch=filhos(pid),pp=pz(pid),base=`pesos.${pid}`,rb=roberts(ch.map(c=>c.id),pp.ord);const sw=ch.reduce((a,c)=>a+(+c.w||0),0);
  return`<h2>12. Taxas de substituição</h2><p class="hint">Taxas de substituição expressam a compensação entre critérios (quanto se aceita perder num para ganhar noutro) e são obtidas sobre os saltos Neutro→Bom — <b>não</b> são “importância” dos nomes dos critérios. Determine de baixo para cima e entre critérios do mesmo nível.</p>
@@ -530,14 +558,16 @@ P.pesos=()=>{const I=internos();if(!I.find(n=>n.id===S.ui.selPai))S.ui.selPai=I[
 ${Math.abs(sw-1)>0.001?`<div class="hint">Soma = ${f(sw,4)} (normalizada automaticamente).</div>`:''}</div>
 <div class="card"><h3>Ordenação dos critérios (matriz de Roberts)</h3><p class="hint">Qual ação é preferível: a com o critério da linha em Bom (demais em Neutro) ou a com o critério da coluna em Bom?</p>${robertsTable(ch.map(c=>c.id),id=>no(id).nome,base+'.ord',pp.ord)}
 ${rb.miss?'':rb.viol.length?'<div class="msg bad">Intransitividade — revise os julgamentos.</div>':`<div class="row"><b>Ordem:</b> ${rb.groups.map((g,k)=>`<span class="tag">${k+1}º ${g.map(x=>esc(no(x).nome)).join(' = ')}</span>`).join('')}</div>`}</div>
-<div class="card"><div class="row"><b>Método:</b>${[['direto','Direto'],['swing','Swing weights'],['trade','Trade-off'],['mac','Comparação par-a-par (MACBETH)']].map(([k,l])=>`<label style="color:var(--ink);display:inline"><input type="radio" name="pm" ${pp.metodo===k?'checked':''} onchange="setP('${base}.metodo','${k}')"> ${l}</label>`).join(' ')}</div>
+<div class="card"><div class="row"><b>Método:</b>${[['direto','Direto'],['swing','Swing weights'],['trade','Trade-off'],['mac','Comparação par-a-par (MACBETH)'],['soma','Par a par de soma constante (0–100)']].map(([k,l])=>`<label style="color:var(--ink);display:inline"><input type="radio" name="pm" ${pp.metodo===k?'checked':''} onchange="setP('${base}.metodo','${k}')"> ${l}</label>`).join(' ')}</div>
 ${pp.metodo==='swing'?`<p class="hint">Parta de uma ação com todos os critérios em Neutro. Qual salto para Bom é preferido? Ele vale 100. Quanto valem os outros saltos em relação a esse?</p><table>${ordemFilhos(pid).map(id=>`<tr><td>${esc(no(id).nome)}</td><td>${saltoTxt(no(id))}</td><td><input type="number" value="${pp.swing[id]??''}" onchange="setP('${base}.swing.${id}',pn(this.value),false)"> pontos</td></tr>`).join('')}</table>`:''}
 ${pp.metodo==='trade'?`<p class="hint">Ação A: critério i em Bom e referência em Neutro; ação B: i em Neutro e referência em Bom. Se B ≻ A, piore a referência em B até a indiferença: informe o valor (pontos, escala Neutro=0/Bom=100) da referência nesse ponto. Então w<sub>i</sub> = w<sub>ref</sub> · valor/100.</p>
 <div class="row">Referência (mais preferível): <select onchange="setP('${base}.trade.ref',this.value)">${opt([['','—'],...ch.map(c=>[c.id,c.nome])],pp.trade.ref)}</select></div>
 ${pp.trade.ref?(()=>{const r=no(pp.trade.ref);const tbl=isLeaf(r)&&transf(r)?`<div class="hint">Escala de “${esc(r.nome)}”: ${dsc(r).niveis.map(l=>`${esc(l.rot||'')}=${f(lvVal(r,l.id),0)}`).join(' · ')}</div>`:'';return tbl+`<table>${ch.filter(c=>c.id!==pp.trade.ref).map(c=>`<tr><td>${esc(c.nome)} ~ referência em</td><td><input type="number" step="any" value="${pp.trade.v[c.id]??''}" onchange="setP('${base}.trade.v.${c.id}',pn(this.value),false)"> pontos</td></tr>`).join('')}</table>`;})():''}`:''}
 ${pp.metodo==='mac'?`<p class="hint">Ações fictícias A<sub>i</sub> (critério i em Bom, demais em Neutro) e A0 (todos em Neutro), ordenadas pela matriz acima. Julgue a perda de atratividade ao trocar a linha pela coluna.</p>
 ${macMatrix([...ordemFilhos(pid).map(id=>({id})),{id:'A0'}],base+'.mac',pp.mac,x=>x.id==='A0'?'A0':'A['+no(x.id).nome+']')}`:''}
+${pp.metodo==='soma'?somaUI(pid):''}
 ${pp.metodo!=='direto'?`<div class="row"><button class="p" onclick="calcPesos('${pid}')">Calcular e aplicar</button></div>`:''}</div>
+${Object.keys(pp.res).length?comparaUI(pid):''}
 <div class="card"><h3>Taxas globais das folhas</h3><table>${folhas().map(n=>`<tr><td>${esc(caminho(n.id))}</td><td class="num">${f(gw(n.id)*100,2)}%</td></tr>`).join('')}</table></div>
 </div></div>`;};
 
