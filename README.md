@@ -1,1 +1,1 @@
-https://marlonsigales.github.io/metodologia-multicriterio-de-apoio-a-decisao/mcda_apoio_decisao(1).html
+https://marlonsigales.github.io/metodologia-multicriterio-de-apoio-a-decisao/index.html
